@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.firebase.ui.auth.data.model.User
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.example.pupmaag.BaseFragment
@@ -41,7 +40,7 @@ class RegistrationFragment: BaseFragment() {
                 fbAuth.createUserWithEmailAndPassword(email, pass)
                     .addOnSuccessListener {authRes ->
                        if(authRes.user != null){
-                           val user = com.revolshen.pupmaag.data.User(
+                           val user = com.example.pupmaag.data.User(
                                    authRes.user!!.uid,
                                    "",
                                    "",

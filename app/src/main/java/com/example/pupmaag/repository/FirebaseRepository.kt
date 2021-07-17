@@ -1,4 +1,4 @@
-package com.revolshen.pupmaag.repository
+package com.example.pupmaag.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -8,8 +8,8 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.revolshen.pupmaag.data.Car
-import com.revolshen.pupmaag.data.User
+import com.example.pupmaag.data.Car
+import com.example.pupmaag.data.User
 
 class FirebaseRepository {
     private val REPO_DEBUG = "REPO_DEBUG"

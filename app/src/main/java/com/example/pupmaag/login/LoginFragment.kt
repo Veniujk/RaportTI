@@ -1,4 +1,4 @@
-package com.revolshen.pupmaag.login
+package com.example.pupmaag.login
 
 import android.os.Bundle
 import android.util.Log
@@ -10,9 +10,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
-import com.example.pupmaag.activites.MainActivity
 import kotlinx.android.synthetic.main.fragment_sign_in.*
-import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 class LoginFragment: BaseFragment(){
 
