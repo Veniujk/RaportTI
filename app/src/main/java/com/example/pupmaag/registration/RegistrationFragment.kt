@@ -31,6 +31,7 @@ class RegistrationFragment: BaseFragment() {
     }
 
     private fun setupSignUpClick() {
+
         signUpButtonRegistration.setOnClickListener {
             val email = email_registration.text?.trim().toString()
             val pass = pass_registration.text?.trim().toString()

@@ -1,5 +1,6 @@
 package com.example.pupmaag.repository
 
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,7 +10,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.example.pupmaag.data.Car
+import com.example.pupmaag.data.Room
 import com.example.pupmaag.data.User
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class FirebaseRepository {
     private val REPO_DEBUG = "REPO_DEBUG"
@@ -118,7 +122,7 @@ class FirebaseRepository {
             .document(auth.currentUser?.uid!!)
             .update("favCars", FieldValue.arrayRemove(car.id))
             .addOnSuccessListener {
-                Log.d(REPO_DEBUG, "Dodana do ulubionych")
+                Log.d(REPO_DEBUG, "Usunieta z ulubionych")
             }
             .addOnFailureListener{
                 Log.d(REPO_DEBUG, it.message.toString())
@@ -140,5 +144,21 @@ class FirebaseRepository {
                     Log.d(REPO_DEBUG, it.message.toString())
                 }
     }
+    fun addCustomClass(){
+        val data = hashMapOf(
+            "cid" to "NBP",
+            "date" to "19.07.2021",
+            "name" to "garaz"
+        )
+        cloud.collection("rooms")
+            .add(data)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Error adding document", e)
+            }
+    }
+
 
 }

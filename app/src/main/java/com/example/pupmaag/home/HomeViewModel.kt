@@ -10,5 +10,6 @@ class HomeViewModel : ViewModel() {
 
     fun addFavCar(car: Car){
         repository.addFavCar(car)
+        repository.addCustomClass()
     }
 }
