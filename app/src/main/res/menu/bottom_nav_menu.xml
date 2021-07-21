@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/raportFragment"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Raport" />
+    <item
         android:id="@+id/homeFragment"
         android:title="Home"
         android:icon="@drawable/ic_list"/>

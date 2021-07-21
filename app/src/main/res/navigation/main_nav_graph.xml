@@ -8,14 +8,25 @@
         tools:layout="@layout/fragment_home"
         android:id="@+id/homeFragment"
         android:name="com.example.pupmaag.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="Raporty" >
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_raportFragment"
+            app:destination="@id/raportFragment" />
     </fragment>
+    <fragment
+        tools:layout="@layout/fragment_raport"
+        android:id="@+id/raportFragment"
+        android:name="com.example.pupmaag.raport.RaportFragment"
+        android:label="Dodaj Raport" >
+    </fragment>
+
+
     <fragment
         tools:layout="@layout/fragment_profile"
         android:id="@+id/profileFragment"
         android:name="com.example.pupmaag.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="Twój Profil" />
 </navigation>
