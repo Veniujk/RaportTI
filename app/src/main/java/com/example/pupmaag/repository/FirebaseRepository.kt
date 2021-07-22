@@ -10,10 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.example.pupmaag.data.Car
-import com.example.pupmaag.data.Room
 import com.example.pupmaag.data.User
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 class FirebaseRepository {
     private val REPO_DEBUG = "REPO_DEBUG"
@@ -158,6 +155,11 @@ class FirebaseRepository {
             .addOnFailureListener { e ->
                 Log.w(TAG, "Error adding document", e)
             }
+    }
+
+    fun addZone1Raport(){
+
+
     }
 
 
