@@ -146,7 +146,7 @@ class FirebaseRepository {
                     Log.d(REPO_DEBUG, it.message.toString())
                 }
     }
-    fun addCustomClass(){ //test do wyjebania
+  /*  fun addCustomClass(){ //test do wyjebania
         val data = hashMapOf(
             "cid" to "NBP",
             "date" to Timestamp(Date()),
@@ -181,6 +181,8 @@ class FirebaseRepository {
 
 
     }
+
+*/
 
 
 }
