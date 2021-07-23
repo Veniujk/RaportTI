@@ -21,6 +21,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <!-- ********************************
+                  Report PAGE STRINGS
+          ******************************** -->
+    <string name="zone1_report_room_name">Wprowadź kontrolowany pokój</string>
+
+
+
+
     <!-- ********************************
                 MAIN PAGE STRINGS
         ******************************** -->
@@ -44,6 +53,7 @@
 
     <string name="row_name">Nazwa samochodu</string>
     <string name="row_year">Rocznik samochodu</string>
+
 
 
 </resources>
