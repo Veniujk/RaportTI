@@ -26,7 +26,11 @@
                   Report PAGE STRINGS
           ******************************** -->
     <string name="zone1_report_room_name">Wprowadź kontrolowany pokój</string>
-
+    <string name="zone2_report_room_name">Wprowadź kontrolowany pokój</string>
+    <string name="zone3_report_room_name">Wprowadź kontrolowany pokój</string>
+    <string name="zone4_report_room_name">Wprowadź kontrolowany pokój</string>
+    <string name="zone5_report_room_name">Wprowadź kontrolowany pokój</string>
+    <string name="zone6_report_room_name">Wprowadź kontrolowany pokój</string>
 
 
 

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/zone4_report_room_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/zone4_report_room_name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sufity - wolne od pajęczyn." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Ściany - wolne od kurzu, smug, pajęczyn i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Podłogi - odkurzone, umyte, wolne od brudu, smug i śladów butów." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Drzwi, przeszklenia - wolne od kurzu, smug i śladów palców." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Windy	- wolne od brudu, smug, pajęczyn, nalepek i gum do żucia." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Meble	- wolne od kurzu, smug, śladów palców i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sprzęt teleinformatyczny - wolne od kurzu i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Lustra - wolne od kurzu, smug zabrudzeń i śladów palców." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Krzesła, fotele, ławki - wolne od kurzu i plam." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Parapety - wolne od kurzu, plam, śmieci i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Kosze - wolne od śmieci, plam, zabrudzeń, wymagane nowe worki." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Gniazda, włączniki - wolne od kurzu, smug i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Bramki - wolne od kurzu i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Gabloty, tablice - wolne od kurzu, smug, pajęczyn i śladów palców	codziennie." />
+
+        <CheckBox
+            android:id="@+id/zone4_report_lp15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Maszyny i urządzenia - wolne od kurzu i zabrudzeń." />
+
+
+        <Button
+            android:id="@+id/zone4_report_send"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="156dp"
+            android:layout_marginTop="20dp"
+            android:text="Wyślij Raport" />
+
+
+    </LinearLayout>
+</ScrollView>

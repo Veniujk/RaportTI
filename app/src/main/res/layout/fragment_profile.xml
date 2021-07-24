@@ -108,7 +108,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Raporty wysłane przez Ciebie"
+                android:text="Favourite cars"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="italic|bold" />

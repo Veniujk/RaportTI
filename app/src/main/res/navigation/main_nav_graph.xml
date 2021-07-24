@@ -16,11 +16,30 @@
             android:id="@+id/action_homeFragment_to_raportFragment"
             app:destination="@id/raportFragment" />
     </fragment>
+
     <fragment
         tools:layout="@layout/fragment_raport"
         android:id="@+id/raportFragment"
         android:name="com.example.pupmaag.raport.RaportFragment"
         android:label="Dodaj Raport" >
+        <action
+            android:id="@+id/action_raportFragment_to_raportFragmentz1"
+            app:destination="@id/raportFragmentz1" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportFragmentz2"
+            app:destination="@id/raportFragmentz2" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportFragmentz3"
+            app:destination="@id/raportFragmentz3" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportFragmentz4"
+            app:destination="@id/raportFragmentz4" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportFragmentz5"
+            app:destination="@id/raportFragmentz5" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportFragmentz6"
+            app:destination="@id/raportFragmentz6" />
     </fragment>
 
 
@@ -29,4 +48,40 @@
         android:id="@+id/profileFragment"
         android:name="com.example.pupmaag.profile.ProfileFragment"
         android:label="Twój Profil" />
+
+    <fragment
+        tools:layout="@layout/fragment_raport_zone1"
+        android:id="@+id/raportFragmentz1"
+        android:name="com.example.pupmaag.raport.RaportZone1Fragment"
+        android:label="Dodaj Raport" />
+
+    <fragment
+        tools:layout="@layout/fragment_raport_zone2"
+        android:id="@+id/raportFragmentz2"
+        android:name="com.example.pupmaag.raport.RaportZone2Fragment"
+        android:label="Dodaj Raport" />
+
+    <fragment
+        tools:layout="@layout/fragment_raport_zone3"
+        android:id="@+id/raportFragmentz3"
+        android:name="com.example.pupmaag.raport.RaportZone3Fragment"
+        android:label="Dodaj Raport" />
+
+    <fragment
+        tools:layout="@layout/fragment_raport_zone4"
+        android:id="@+id/raportFragmentz4"
+        android:name="com.example.pupmaag.raport.RaportZone4Fragment"
+        android:label="Dodaj Raport" />
+
+    <fragment
+        tools:layout="@layout/fragment_raport_zone5"
+        android:id="@+id/raportFragmentz5"
+        android:name="com.example.pupmaag.raport.RaportZone5Fragment"
+        android:label="Dodaj Raport" />
+
+    <fragment
+        tools:layout="@layout/fragment_raport_zone6"
+        android:id="@+id/raportFragmentz6"
+        android:name="com.example.pupmaag.raport.RaportZone6Fragment"
+        android:label="Dodaj Raport" />
 </navigation>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/zone5_report_room_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/zone5_report_room_name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Podłogi odkurzone - umyte, wolne od brudu, smug i śladów butów." />
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Meble - wolne od kurzu, smug i śladów palców." />
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Meble tapicerowane, fotele tapicerowane, krzesła drewniane i tapicerowane - wolne od kurzu i plam." />
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sprzęt RTV, elektroniczny, teleinformatyczny, AGD – z zewnątrz - wolne od kurzu i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Parapety - wolne od kurzu, zabrudzeń, plam i śmieci." />
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Węzeł sanitarny w pokoju - umywalki, muszle, brodziki, zlewy i baterie - wolne od osadów, smug." />
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Środki higieniczne - uzupełnienie mydełek hotelowych oraz papieru toaletowego – jeżeli zużyte." />
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Kosze - wolne od śmieci, plam i zabrudzeń, wymagane nowe worki." />
+
+        <CheckBox
+            android:id="@+id/zone5_report_lp9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Lustra - wolne od kurzu, smug zabrudzeń i śladów palców." />
+
+        <Button
+            android:id="@+id/zone5_report_send"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="156dp"
+            android:layout_marginTop="20dp"
+            android:text="Wyślij Raport" />
+
+
+    </LinearLayout>
+</ScrollView>

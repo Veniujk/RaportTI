@@ -1,10 +1,8 @@
 package com.example.pupmaag.repository
 
-import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.pupmaag.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -12,9 +10,6 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.example.pupmaag.data.Car
 import com.example.pupmaag.data.User
-import com.example.pupmaag.data.Zone1
-import com.google.firebase.Timestamp
-import java.util.*
 
 
 class FirebaseRepository {
@@ -146,43 +141,7 @@ class FirebaseRepository {
                     Log.d(REPO_DEBUG, it.message.toString())
                 }
     }
-  /*  fun addCustomClass(){ //test do wyjebania
-        val data = hashMapOf(
-            "cid" to "NBP",
-            "date" to Timestamp(Date()),
-            "name" to "garaz",
-            "test" to true
 
-        )
-        cloud.collection("rooms")
-            .add(data)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-            }
-    }
-//do testu sprwadzic jak zadziała ten snapshot
-    fun addZone1Raport(zone1: Zone1){
-        val docRef = cloud.collection("cities").document("SF")
-        docRef.addSnapshotListener { snapshot, e ->
-            if (e != null) {
-                Log.w(TAG, "Listen failed.", e)
-                return@addSnapshotListener
-            }
-
-            if (snapshot != null && snapshot.exists()) {
-                Log.d(TAG, "Current data: ${snapshot.data}")
-            } else {
-                Log.d(TAG, "Current data: null")
-            }
-        }
-
-
-    }
-
-*/
 
 
 }
