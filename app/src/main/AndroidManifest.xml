@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseSeriesMini">
-           <activity android:name=".activites.RegistrationActivity">
+        <activity android:name=".activites.SpinnerActivity"/>
+        <activity android:name=".activites.RegistrationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

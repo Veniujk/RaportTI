@@ -53,35 +53,59 @@
         tools:layout="@layout/fragment_raport_zone1"
         android:id="@+id/raportFragmentz1"
         android:name="com.example.pupmaag.raport.RaportZone1Fragment"
-        android:label="Dodaj Raport" />
+        android:label="Dodaj Raport" >
+        <action
+            android:id="@+id/action_raportFragmentz1_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <fragment
         tools:layout="@layout/fragment_raport_zone2"
         android:id="@+id/raportFragmentz2"
         android:name="com.example.pupmaag.raport.RaportZone2Fragment"
-        android:label="Dodaj Raport" />
+        android:label="Dodaj Raport" >
+        <action
+            android:id="@+id/action_raportFragmentz2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <fragment
         tools:layout="@layout/fragment_raport_zone3"
         android:id="@+id/raportFragmentz3"
         android:name="com.example.pupmaag.raport.RaportZone3Fragment"
-        android:label="Dodaj Raport" />
+        android:label="Dodaj Raport" >
+        <action
+            android:id="@+id/action_raportFragmentz3_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <fragment
         tools:layout="@layout/fragment_raport_zone4"
         android:id="@+id/raportFragmentz4"
         android:name="com.example.pupmaag.raport.RaportZone4Fragment"
-        android:label="Dodaj Raport" />
+        android:label="Dodaj Raport" >
+        <action
+            android:id="@+id/action_raportFragmentz4_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <fragment
         tools:layout="@layout/fragment_raport_zone5"
         android:id="@+id/raportFragmentz5"
         android:name="com.example.pupmaag.raport.RaportZone5Fragment"
-        android:label="Dodaj Raport" />
+        android:label="Dodaj Raport" >
+        <action
+            android:id="@+id/action_raportFragmentz5_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <fragment
         tools:layout="@layout/fragment_raport_zone6"
         android:id="@+id/raportFragmentz6"
         android:name="com.example.pupmaag.raport.RaportZone6Fragment"
-        android:label="Dodaj Raport" />
+        android:label="Dodaj Raport" >
+        <action
+            android:id="@+id/action_raportFragmentz6_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

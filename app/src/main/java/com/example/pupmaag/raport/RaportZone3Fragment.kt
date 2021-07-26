@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -38,25 +40,24 @@ class  RaportZone3Fragment : BaseFragment() {
         zone3_report_send.setOnClickListener {
             val zone3_room = zone3_report_room_name.text?.trim().toString()
             val zone3_lr1 = zone3_report_lp1.isChecked
-            val zone3_lr2 = zone3_report_lp1.isChecked
-            val zone3_lr3 = zone3_report_lp1.isChecked
-            val zone3_lr4 = zone3_report_lp1.isChecked
-            val zone3_lr5 = zone3_report_lp1.isChecked
-            val zone3_lr6 = zone3_report_lp1.isChecked
-            val zone3_lr7 = zone3_report_lp1.isChecked
-            val zone3_lr8 = zone3_report_lp1.isChecked
-            val zone3_lr9 = zone3_report_lp1.isChecked
-            val zone3_lr10 = zone3_report_lp1.isChecked
-            val zone3_lr11 = zone3_report_lp1.isChecked
-            val zone3_lr12 = zone3_report_lp1.isChecked
-            val zone3_lr13 = zone3_report_lp1.isChecked
-            val zone3_lr14 = zone3_report_lp1.isChecked
-            val zone3_lr15 = zone3_report_lp1.isChecked
-            val zone3_lr16 = zone3_report_lp1.isChecked
-            val zone3_lr17 = zone3_report_lp1.isChecked
-            val zone3_lr18 = zone3_report_lp1.isChecked
+            val zone3_lr2 = zone3_report_lp2.isChecked
+            val zone3_lr3 = zone3_report_lp3.isChecked
+            val zone3_lr4 = zone3_report_lp4.isChecked
+            val zone3_lr5 = zone3_report_lp5.isChecked
+            val zone3_lr6 = zone3_report_lp6.isChecked
+            val zone3_lr7 = zone3_report_lp7.isChecked
+            val zone3_lr8 = zone3_report_lp8.isChecked
+            val zone3_lr9 = zone3_report_lp9.isChecked
+            val zone3_lr10 = zone3_report_lp10.isChecked
+            val zone3_lr11 = zone3_report_lp11.isChecked
+            val zone3_lr12 = zone3_report_lp12.isChecked
+            val zone3_lr13 = zone3_report_lp13.isChecked
+            val zone3_lr14 = zone3_report_lp14.isChecked
+            val zone3_lr15 = zone3_report_lp15.isChecked
+            val zone3_lr16 = zone3_report_lp16.isChecked
             val data = hashMapOf(
                 "cid" to "NBP",
+                "Zone" to "Strefa 3",
                 "date" to Timestamp(Date()),
                 "room_name" to zone3_room,
                 "lr1" to zone3_lr1,
@@ -74,9 +75,7 @@ class  RaportZone3Fragment : BaseFragment() {
                 "lr13" to zone3_lr13,
                 "lr14" to zone3_lr14,
                 "lr15" to zone3_lr15,
-                "lr16" to zone3_lr16,
-                "lr17" to zone3_lr17,
-                "lr18" to zone3_lr18
+                "lr16" to zone3_lr16
                )
                if (zone3_room != null) {
 
@@ -93,6 +92,10 @@ class  RaportZone3Fragment : BaseFragment() {
                            Log.w(ContentValues.TAG, "Error adding document", e)
                        }
                }
+            findNavController()
+                .navigate(RaportZone3FragmentDirections.actionRaportFragmentz3ToHomeFragment().actionId)
+            Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
+                .show()
            }
     }
 }

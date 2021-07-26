@@ -32,7 +32,17 @@
     <string name="zone5_report_room_name">Wprowadź kontrolowany pokój</string>
     <string name="zone6_report_room_name">Wprowadź kontrolowany pokój</string>
 
-
+    <!-- ********************************
+                      Zone 1 - Room List
+              ******************************** -->
+    <string-array name="Rooms">
+        <item>Szeryf</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
 
     <!-- ********************************
                 MAIN PAGE STRINGS
@@ -57,7 +67,6 @@
 
     <string name="row_name">Nazwa samochodu</string>
     <string name="row_year">Rocznik samochodu</string>
-
 
 
 </resources>
