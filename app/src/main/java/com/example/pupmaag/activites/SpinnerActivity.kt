@@ -7,7 +7,6 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.example.pupmaag.R
-import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 
 class SpinnerActivity : AppCompatActivity() {
 
@@ -17,7 +16,7 @@ class SpinnerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_raport_zone1)
 
-        room = findViewById<Spinner>(R.id.spinner)
+        room = findViewById<Spinner>(R.id.zone1_name_spinner)
 
         val rooms = arrayOf("room1", "room2", "room3", "room4","room5")
 

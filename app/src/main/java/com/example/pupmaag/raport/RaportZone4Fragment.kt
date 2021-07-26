@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
@@ -30,13 +31,18 @@ class  RaportZone4Fragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        openReportZone1Click()
+        openReportZone4Click()
+        val rooms = arrayOf("1","2","3","4")
+        val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        zone4_name_spinner.adapter = arrayAdapter
     }
 
-    private fun openReportZone1Click() {
+    private fun openReportZone4Click() {
 
         zone4_report_send.setOnClickListener {
-            val zone4_room = zone4_report_room_name.text?.trim().toString()
+            val zone4_room = zone4_name_spinner.selectedItem
             val zone4_lr1 = zone4_report_lp1.isChecked
             val zone4_lr2 = zone4_report_lp2.isChecked
             val zone4_lr3 = zone4_report_lp3.isChecked

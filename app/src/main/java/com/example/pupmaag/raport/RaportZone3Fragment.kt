@@ -6,15 +6,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import kotlinx.android.synthetic.main.fragment_raport_zone3.*
 import java.util.*
@@ -32,13 +30,18 @@ class  RaportZone3Fragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        openReportZone1Click()
+        openReportZone3Click()
+        val rooms = arrayOf("1","2","3","4")
+        val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        zone3_name_spinner.adapter = arrayAdapter
     }
 
-    private fun openReportZone1Click() {
+    private fun openReportZone3Click() {
 
         zone3_report_send.setOnClickListener {
-            val zone3_room = zone3_report_room_name.text?.trim().toString()
+            val zone3_room = zone3_name_spinner.selectedItem
             val zone3_lr1 = zone3_report_lp1.isChecked
             val zone3_lr2 = zone3_report_lp2.isChecked
             val zone3_lr3 = zone3_report_lp3.isChecked

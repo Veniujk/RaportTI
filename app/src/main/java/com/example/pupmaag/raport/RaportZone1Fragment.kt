@@ -6,9 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
@@ -18,17 +16,15 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_main.*
-
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import java.util.*
+
 
 class RaportZone1Fragment : BaseFragment(){
     private val Report_DEBUG = "REPORT_DEBUG"
     private val cloud = FirebaseFirestore.getInstance()
     private val homeVm by viewModels<HomeViewModel>()
     private val auth = FirebaseAuth.getInstance()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,16 +36,18 @@ class RaportZone1Fragment : BaseFragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         openReportZone1Click()
+        val rooms = arrayOf("1","2","3","4")
+        val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
+        zone1_name_spinner.adapter = arrayAdapter
     }
 
     private fun openReportZone1Click() {
 
 
         zone1_report_send.setOnClickListener {
-
-
-            val zone1_room = zone1_report_room_name.text?.trim().toString()
+            val zone1_room = zone1_name_spinner.selectedItem
             val zone1_lr1 = zone1_report_lp1.isChecked
             val zone1_lr2 = zone1_report_lp2.isChecked
             val zone1_lr3 = zone1_report_lp3.isChecked
@@ -69,13 +67,12 @@ class RaportZone1Fragment : BaseFragment(){
             val zone1_lr17 = zone1_report_lp17.isChecked
             val zone1_lr18 = zone1_report_lp18.isChecked
 
-
                val data = hashMapOf(
                    "cid" to "NBP",
-                   "uid" to "test",
+                   "uid" to auth.currentUser?.uid,
                    "Zone" to "Strefa 1",
                    "date" to Timestamp(Date()),
-                   "room_name" to "k",
+                   "room_name" to zone1_room,
                    "lr1" to zone1_lr1,
                    "lr2" to zone1_lr2,
                    "lr3" to zone1_lr3,
@@ -94,8 +91,6 @@ class RaportZone1Fragment : BaseFragment(){
                    "lr16" to zone1_lr16,
                    "lr17" to zone1_lr17,
                    "lr18" to zone1_lr18,
-
-
                )
                if (zone1_room != null) {
 

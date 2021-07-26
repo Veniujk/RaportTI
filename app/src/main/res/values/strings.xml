@@ -18,7 +18,6 @@
     <string name="sign_in_password_hint">Hasło</string>
     <string name="sign_in_button">ZALOGUJ</string>
     <string name="sign_in_register_button">ZAREJESTRUJ</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
@@ -32,17 +31,6 @@
     <string name="zone5_report_room_name">Wprowadź kontrolowany pokój</string>
     <string name="zone6_report_room_name">Wprowadź kontrolowany pokój</string>
 
-    <!-- ********************************
-                      Zone 1 - Room List
-              ******************************** -->
-    <string-array name="Rooms">
-        <item>Szeryf</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-    </string-array>
 
     <!-- ********************************
                 MAIN PAGE STRINGS

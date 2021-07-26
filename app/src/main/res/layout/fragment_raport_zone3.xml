@@ -9,18 +9,21 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical">
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/zone3_report_room_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/zone3_report_room_name" />
+        <TextView
+            android:id="@+id/zone3_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:text="Wybierz kontrolowane pomieszczenie: " />
+        <Spinner
+            android:id="@+id/zone3_name_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
         </com.google.android.material.textfield.TextInputLayout>
-
         <CheckBox
             android:id="@+id/zone3_report_lp1"
             android:layout_width="match_parent"
