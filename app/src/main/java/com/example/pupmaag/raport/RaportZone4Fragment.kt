@@ -13,6 +13,7 @@ import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import kotlinx.android.synthetic.main.fragment_raport_zone4.*
@@ -21,7 +22,7 @@ import java.util.*
 class  RaportZone4Fragment : BaseFragment() {
     private val Report_DEBUG = "REPORT_DEBUG"
     private val cloud = FirebaseFirestore.getInstance()
-
+    private val auth = FirebaseAuth.getInstance()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,6 +61,7 @@ class  RaportZone4Fragment : BaseFragment() {
             val zone4_lr15 = zone4_report_lp15.isChecked
             val data = hashMapOf(
                 "cid" to "NBP",
+                "uid" to auth.currentUser?.uid,
                 "Zone" to "Strefa 4",
                 "date" to Timestamp(Date()),
                 "room_name" to zone4_room,

@@ -39,14 +39,10 @@ class CarAdapter(private val listener: OnCarItemLongClick) :
     private fun bindData(holder: CarViewHolder) {
         val name = holder.itemView.findViewById<TextView>(R.id.carName)
         val productionYear = holder.itemView.findViewById<TextView>(R.id.carProductionYear)
-        val image = holder.itemView.findViewById<ImageView>(R.id.carImage)
 
         name.text = carsList[holder.adapterPosition].name
         productionYear.text = carsList[holder.adapterPosition].productionYear
-        Glide.with(holder.itemView)
-                .load(carsList[holder.adapterPosition].image)
-                .into(image)
-    }
+       }
 
     override fun getItemCount(): Int {
        return carsList.size
