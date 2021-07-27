@@ -72,7 +72,6 @@ class RaportZone1Fragment : BaseFragment(){
             val zone1_lr17 = zone1_report_lp17.isChecked
             val zone1_lr18 = zone1_report_lp18.isChecked
             val data = hashMapOf(
-                   "id" to "tmpid",
                    "cid" to "NBP",
                    "uid" to auth.currentUser?.uid,
                    "zone" to "Strefa 1",
