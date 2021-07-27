@@ -14,15 +14,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
-import com.example.pupmaag.data.Car
 import com.example.pupmaag.data.User
 import com.example.pupmaag.home.CarAdapter
-import com.example.pupmaag.home.OnCarItemLongClick
+import com.example.pupmaag.home.OnRaportItemLongClick
 import kotlinx.android.synthetic.main.fragment_profile.*
 import java.io.ByteArrayOutputStream
 import java.lang.Exception
 
-class ProfileFragment : BaseFragment(), OnCarItemLongClick {
+class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
     private val PROFILE_DEBUG = "PROFILE_DEBUG"
     private val REQUEST_IMAGE_CAPTURE = 1
 
@@ -49,14 +48,14 @@ class ProfileFragment : BaseFragment(), OnCarItemLongClick {
 
         profileVm.favCars.observe(viewLifecycleOwner, {list ->
             list?.let {
-                adapter.setCars(it)
+                adapter.setRaports(it)
             }
         })
     }
-    override fun onCarLongClick(car: Car, position: Int) {
-        profileVm.removeFavCar(car)
-        adapter.removeCar(car, position)
-    }
+   /* override fun onCarLongClick(raport: Raport, position: Int) {
+        profileVm.removeFavCar(raport)
+        adapter.removeCar(raport, position)
+    }*/
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){

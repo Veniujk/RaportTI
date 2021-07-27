@@ -32,7 +32,10 @@ class  RaportZone3Fragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         openReportZone3Click()
-        val rooms = arrayOf("1","2","3","4")
+        val rooms = arrayOf("Zespoły specjalnych pomieszczeń magazynowych",
+                            "Hole rozładunkowe",
+                            "Sortowanie",
+                            "Pomieszczenia inne")
         val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 

@@ -2,7 +2,7 @@ package com.example.pupmaag.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import com.example.pupmaag.data.Car
+import com.example.pupmaag.data.Raport
 import com.example.pupmaag.repository.FirebaseRepository
 
 class ProfileViewModel : ViewModel() {
@@ -10,10 +10,10 @@ class ProfileViewModel : ViewModel() {
 
     val user = repository.getUserData()
     val favCars = user.switchMap {
-        repository.getFavCars(it.favCars)
+        repository.getFavCars(it.userRaports)
     }
-    fun removeFavCar(car: Car){
-        repository.removeFavCar(car)
+    fun removeFavCar(raport: Raport){
+        repository.removeuserRaports(raport)
     }
     fun editProfileData(map: Map<String, String>){
         repository.editProfileData(map)
