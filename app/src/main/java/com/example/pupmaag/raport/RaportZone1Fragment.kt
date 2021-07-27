@@ -118,14 +118,14 @@ class RaportZone1Fragment : BaseFragment(){
 
                        findNavController()
                            .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
-
+                   Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
+                       .show()
                    }
 
 
                }
 
-            Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
-                .show()
+
            }
     }
 
