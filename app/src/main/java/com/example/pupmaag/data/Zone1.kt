@@ -1,5 +1,7 @@
 package com.example.pupmaag.data
 
+
+
 data class Zone1 (val id: String? = null,
                   val cid: String? = null,
                   val uid: String? = null,
@@ -19,7 +21,4 @@ data class Zone1 (val id: String? = null,
                   val report_lp12: Boolean? = null,
                   val report_lp13: Boolean? = null,
                   val report_lp14: Boolean? = null,
-                  val report_lp15: Boolean? = null,
-                  val report_lp16: Boolean? = null,
-                  val report_lp17: Boolean? = null,
-                  val report_lp18: Boolean? = null)
+                  val report_lp15: Boolean? = null)

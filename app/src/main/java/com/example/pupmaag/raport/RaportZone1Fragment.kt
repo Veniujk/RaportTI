@@ -1,9 +1,9 @@
 package com.example.pupmaag.raport
 
 import android.content.ContentValues
-import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.util.Log
+import android.view.InflateException
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_registration.*
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import java.util.*
 
@@ -43,6 +44,7 @@ class RaportZone1Fragment : BaseFragment(){
                               "Sala operacyjna",
                               "Hol główny z wejsciem do obiektu",
                               "Pomieszczenia inne w obrębie lokalizacji")
+
         val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -113,8 +115,12 @@ class RaportZone1Fragment : BaseFragment(){
                        }
 
 
-                   findNavController()
-                       .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
+
+                       findNavController()
+                           .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
+
+                   }
+
 
                }
 
@@ -122,5 +128,5 @@ class RaportZone1Fragment : BaseFragment(){
                 .show()
            }
     }
-}
+
 
