@@ -1,15 +1,15 @@
 package com.example.pupmaag.home
 
 import androidx.lifecycle.ViewModel
-import com.example.pupmaag.data.Car
+import com.example.pupmaag.data.Raport
 import com.example.pupmaag.repository.FirebaseRepository
 
 class HomeViewModel : ViewModel() {
     private val repository = FirebaseRepository()
-    val cars = repository.getCars()
+    val raports = repository.getRaports()
 
-    fun addFavCar(car: Car){
-        repository.addFavCar(car)
+    fun adduserRaports(raport: Raport){
+        repository.adduserRaports(raport)
 
     }
 }

@@ -53,8 +53,9 @@
             LIST ROW STRINGS
     ******************************** -->
 
-    <string name="row_name">Nazwa samochodu</string>
-    <string name="row_year">Rocznik samochodu</string>
+    <string name="row_name">Nazwa pokoju</string>
+    <string name="row_date">Data kontroli</string>
+    <string name="row_zone">Strefa</string>
 
 
 </resources>

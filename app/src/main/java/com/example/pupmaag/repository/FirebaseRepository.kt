@@ -8,7 +8,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.example.pupmaag.data.Car
+import com.example.pupmaag.data.Raport
 import com.example.pupmaag.data.User
 
 
@@ -73,13 +73,13 @@ class FirebaseRepository {
 
         return cloudResult
     }
-    fun getCars(): LiveData<List<Car>>{
-        val cloudResult = MutableLiveData<List<Car>>()
+    fun getRaports(): LiveData<List<Raport>>{
+        val cloudResult = MutableLiveData<List<Raport>>()
 
-        cloud.collection("cars")
+        cloud.collection("raports")
             .get()
             .addOnSuccessListener {
-                val user = it.toObjects(Car::class.java)
+                val user = it.toObjects(Raport::class.java)
                 cloudResult.postValue(user)
             }
             .addOnFailureListener{
@@ -87,15 +87,13 @@ class FirebaseRepository {
             }
         return cloudResult
     }
-    fun getFavCars(list: List<String>?): LiveData<List<Car>> {
-        val cloudResult = MutableLiveData<List<Car>>()
-
-        if(!list.isNullOrEmpty())
-            cloud.collection("cars")
-               .whereIn("id", list)
+    fun getFavCars(list: List<String>?): LiveData<List<Raport>> {
+        val cloudResult = MutableLiveData<List<Raport>>()
+            cloud.collection("raports")
+                .whereEqualTo("uid",auth.currentUser?.uid!! )
                .get()
                .addOnSuccessListener {
-                   val resultList = it.toObjects(Car::class.java)
+                   val resultList = it.toObjects(Raport::class.java)
                    cloudResult.postValue(resultList)
                }
                .addOnFailureListener{
@@ -103,10 +101,10 @@ class FirebaseRepository {
                }
         return cloudResult
     }
-    fun addFavCar(car : Car){
+    fun adduserRaports(raport : Raport){
         cloud.collection("users")
             .document(auth.currentUser?.uid!!)
-            .update("favCars", FieldValue.arrayUnion(car.id))
+            .update("userRaports", FieldValue.arrayUnion(raport.id))
             .addOnSuccessListener {
                 Log.d(REPO_DEBUG, "Dodana do ulubionych")
             }
@@ -114,10 +112,10 @@ class FirebaseRepository {
                 Log.d(REPO_DEBUG, it.message.toString())
             }
     }
-    fun removeFavCar(car : Car){
+    fun removeuserRaports(raport : Raport){
         cloud.collection("users")
             .document(auth.currentUser?.uid!!)
-            .update("favCars", FieldValue.arrayRemove(car.id))
+            .update("userRaports", FieldValue.arrayRemove(raport.id))
             .addOnSuccessListener {
                 Log.d(REPO_DEBUG, "Usunieta z ulubionych")
             }
