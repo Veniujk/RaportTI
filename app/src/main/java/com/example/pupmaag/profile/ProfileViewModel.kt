@@ -9,10 +9,10 @@ class ProfileViewModel : ViewModel() {
     private val repository = FirebaseRepository()
 
     val user = repository.getUserData()
-    val favCars = user.switchMap {
+    val userRaports = user.switchMap {
         repository.getFavCars(it.userRaports)
     }
-    fun removeFavCar(raport: Raport){
+    fun removeUserCars(raport: Raport){
         repository.removeuserRaports(raport)
     }
     fun editProfileData(map: Map<String, String>){

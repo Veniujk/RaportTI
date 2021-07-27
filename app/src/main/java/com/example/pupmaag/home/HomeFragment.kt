@@ -16,7 +16,7 @@ class HomeFragment : BaseFragment(), OnRaportItemLongClick {
     private val auth = FirebaseAuth.getInstance()
     private val cloud = FirebaseFirestore.getInstance()
     private val homeVm by viewModels<HomeViewModel>()
-    private val adapter = CarAdapter(this)
+    private val adapter = RaportAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)

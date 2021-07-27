@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
 import com.example.pupmaag.data.User
-import com.example.pupmaag.home.CarAdapter
+import com.example.pupmaag.home.RaportAdapter
 import com.example.pupmaag.home.OnRaportItemLongClick
 import kotlinx.android.synthetic.main.fragment_profile.*
 import java.io.ByteArrayOutputStream
@@ -26,7 +26,7 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
     private val REQUEST_IMAGE_CAPTURE = 1
 
     private val profileVm by viewModels<ProfileViewModel>()
-    private val adapter = CarAdapter(this)
+    private val adapter = RaportAdapter(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -36,8 +36,8 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
         super.onViewCreated(view, savedInstanceState)
         setupSubmitDataClick()
         setupTakePictureClick()
-        recyclerFavCars.layoutManager = LinearLayoutManager(requireContext())
-        recyclerFavCars.adapter = adapter
+        recycleruserRaport.layoutManager = LinearLayoutManager(requireContext())
+        recycleruserRaport.adapter = adapter
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -46,7 +46,7 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
             bindUserData(user)
         })
 
-        profileVm.favCars.observe(viewLifecycleOwner, {list ->
+        profileVm.userRaports.observe(viewLifecycleOwner, { list ->
             list?.let {
                 adapter.setRaports(it)
             }

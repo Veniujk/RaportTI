@@ -7,16 +7,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
-import com.example.pupmaag.data.Raport
 import com.example.pupmaag.home.HomeViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import java.util.*
@@ -40,40 +39,20 @@ class RaportZone1Fragment : BaseFragment(){
         openReportZone1Click()
 
 
-     /*   val rooms = arrayOf("Zespoły Sekretarsko-Dyrektorskie.",
-                              "Sala operacyjna.",
-                              "Hol główny z wejscim do obiektu.",
-                              "Pomieszczenia inne w obrębie lokalizacji.")
+        val rooms = arrayOf("Zespoły sekretarsko-dyrektorskie",
+                              "Sala operacyjna",
+                              "Hol główny z wejsciem do obiektu",
+                              "Pomieszczenia inne w obrębie lokalizacji")
         val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        zone1_name_spinner.adapter = arrayAdapter*/
+        zone1_name_spinner.adapter = arrayAdapter
     }
-    private fun getDateTime(s: String): String? {
-        try {
-            val sdf = SimpleDateFormat("MM/dd/yyyy")
-            val netDate = Date(s.toLong() * 1000)
-            return sdf.format(netDate)
-        } catch (e: Exception) {
-            return e.toString()
-        }
-    }
-
- /* fun getShortDate(ts:Long?):String{
-      if(ts == null) return ""
-      //Get instance of calendar
-      val calendar = Calendar.getInstance(Locale.getDefault())
-      //get current date from ts
-      calendar.timeInMillis = ts
-      //return formatted date
-      return android.text.format.DateFormat.format("E, dd MMM yyyy", calendar).toString()
-  }*/
 
     private fun openReportZone1Click() {
 
-
         zone1_report_send.setOnClickListener {
-            val zone1_room = "zone1_name_spinner.selectedItem"
+            val zone1_room = zone1_name_spinner.selectedItem
             val zone1_lr1 = zone1_report_lp1.isChecked
             val zone1_lr2 = zone1_report_lp2.isChecked
             val zone1_lr3 = zone1_report_lp3.isChecked
@@ -133,14 +112,16 @@ class RaportZone1Fragment : BaseFragment(){
                        .addOnFailureListener { e ->
                            Log.w(ContentValues.TAG, "Error adding document", e)
                        }
+
+
+                   findNavController()
+                       .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
+
                }
 
-            findNavController()
-                .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
             Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                 .show()
            }
-
     }
 }
 

@@ -68,7 +68,7 @@ class  RaportZone2Fragment : BaseFragment() {
                 "uid" to auth.currentUser?.uid,
                 "Zone" to "Strefa 2",
                 "date" to Timestamp(Date()),
-                "room_name" to zone2_room,
+                "name" to zone2_room,
                 "lr1" to zone2_lr1,
                 "lr2" to zone2_lr2,
                 "lr3" to zone2_lr3,
@@ -87,7 +87,7 @@ class  RaportZone2Fragment : BaseFragment() {
                )
                if (zone2_room != null) {
 
-                   cloud.collection("rooms")
+                   cloud.collection("raports")
                        .add(data)
 
                        .addOnSuccessListener { documentReference ->

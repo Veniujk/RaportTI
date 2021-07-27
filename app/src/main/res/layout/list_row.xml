@@ -33,29 +33,32 @@
             android:id="@+id/raportDate"
             android:layout_width="231dp"
             android:layout_height="17dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="12dp"
             android:text="@string/row_date"
             android:textColor="@color/light_black"
             android:textSize="15sp"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/raportZone"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.027" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/raportZone"
             android:layout_width="131dp"
             android:layout_height="20dp"
-            android:layout_marginEnd="260dp"
             android:text="@string/row_zone"
             android:textColor="@color/light_black"
             android:textSize="15sp"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.027" />
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

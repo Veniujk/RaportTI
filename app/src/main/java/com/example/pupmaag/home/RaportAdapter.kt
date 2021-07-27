@@ -1,5 +1,6 @@
 package com.example.pupmaag.home
 
+import android.icu.text.SimpleDateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pupmaag.R
 import com.example.pupmaag.data.Raport
 
-class CarAdapter(private val listener: OnRaportItemLongClick) :
-    RecyclerView.Adapter<CarAdapter.RaportViewHolder>() {
+class RaportAdapter(private val listener: OnRaportItemLongClick) :
+    RecyclerView.Adapter<RaportAdapter.RaportViewHolder>() {
 
     private val raportsList = ArrayList<Raport>()
 
@@ -40,7 +41,7 @@ class CarAdapter(private val listener: OnRaportItemLongClick) :
         val data = holder.itemView.findViewById<TextView>(R.id.raportDate)
         name.text = raportsList[holder.adapterPosition].name
         zone.text = raportsList[holder.adapterPosition].zone
-        data.text = raportsList[holder.adapterPosition].date.toString()
+        data.text = SimpleDateFormat("dd/MM/yyyy HH:mm").format(raportsList[holder.adapterPosition].date?.toDate())
        }
 
     override fun getItemCount(): Int {
