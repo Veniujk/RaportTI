@@ -66,7 +66,7 @@ class  RaportZone6Fragment : BaseFragment() {
             val data = hashMapOf(
                 "cid" to "NBP",
                 "uid" to auth.currentUser?.uid,
-                "Zone" to "Strefa 6",
+                "zone" to "Strefa 6",
                 "date" to Timestamp(Date()),
                 "name" to zone6_room,
                 "lr1" to zone6_lr1,
