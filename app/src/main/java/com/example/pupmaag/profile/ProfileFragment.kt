@@ -6,17 +6,18 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
+import com.example.pupmaag.data.Raport
 import com.example.pupmaag.data.User
 import com.example.pupmaag.home.RaportAdapter
 import com.example.pupmaag.home.OnRaportItemLongClick
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_profile.*
 import java.io.ByteArrayOutputStream
 import java.lang.Exception
@@ -24,14 +25,33 @@ import java.lang.Exception
 class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
     private val PROFILE_DEBUG = "PROFILE_DEBUG"
     private val REQUEST_IMAGE_CAPTURE = 1
-
+    private val auth = FirebaseAuth.getInstance()
     private val profileVm by viewModels<ProfileViewModel>()
     private val adapter = RaportAdapter(this)
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.logout_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.logout_action -> {
+                auth.signOut()
+                requireActivity().finish()
+            }
+        }
+        return false
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupSubmitDataClick()
@@ -48,14 +68,12 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
 
         profileVm.userRaports.observe(viewLifecycleOwner, { list ->
             list?.let {
-                adapter.setRaports(it)
+                //adapter.setRaports(it)
+                adapter.setRaports(list.sortedByDescending { it.date })
             }
         })
     }
-   /* override fun onCarLongClick(raport: Raport, position: Int) {
-        profileVm.removeFavCar(raport)
-        adapter.removeCar(raport, position)
-    }*/
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
@@ -107,6 +125,11 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
             val map = mapOf("name" to name, "surname" to surname)
             profileVm.editProfileData(map)
         }
+    }
+
+    override fun onRaportLongClick(raport: Raport, position: Int) {
+        Snackbar.make(requireView(), "Hello there!", Snackbar.LENGTH_SHORT)
+            .show()
     }
 
 

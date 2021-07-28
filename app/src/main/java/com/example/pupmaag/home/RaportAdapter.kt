@@ -54,12 +54,12 @@ class RaportAdapter(private val listener: OnRaportItemLongClick) :
     inner class RaportViewHolder(view: View) : RecyclerView.ViewHolder(view){
         init {
             view.setOnLongClickListener() {
-              //  listener.onCarLongClick(carsList[adapterPosition], adapterPosition)
+                listener.onRaportLongClick(raportsList[adapterPosition], adapterPosition)
                 true
             }
         }
     }
 }
 interface OnRaportItemLongClick{
-  //  fun onRaportLongClick(raport: Raport, position: Int)
+    fun onRaportLongClick(raport: Raport, position: Int)
 }

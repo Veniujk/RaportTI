@@ -12,9 +12,7 @@ class ProfileViewModel : ViewModel() {
     val userRaports = user.switchMap {
         repository.getFavCars(it.userRaports)
     }
-    fun removeUserCars(raport: Raport){
-        repository.removeuserRaports(raport)
-    }
+
     fun editProfileData(map: Map<String, String>){
         repository.editProfileData(map)
     }

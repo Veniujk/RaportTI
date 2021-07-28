@@ -8,13 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
-import com.google.firebase.firestore.FirebaseFirestore
+import com.example.pupmaag.data.Raport
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.list_row.*
 
 class HomeFragment : BaseFragment(), OnRaportItemLongClick {
 
     private val auth = FirebaseAuth.getInstance()
-    private val cloud = FirebaseFirestore.getInstance()
     private val homeVm by viewModels<HomeViewModel>()
     private val adapter = RaportAdapter(this)
 
@@ -53,12 +54,14 @@ class HomeFragment : BaseFragment(), OnRaportItemLongClick {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         homeVm.raports.observe(viewLifecycleOwner, { list ->
-            adapter.setRaports(list)
+            adapter.setRaports(list.sortedByDescending { it.date })
         })
     }
 
-   /* override fun onCarLongClick(raport: Raport, position: Int) {
-        homeVm.addFavCar(raport)
+
+    override fun onRaportLongClick(raport: Raport, position: Int) {
+        Snackbar.make(requireView(), "Hello there", Snackbar.LENGTH_SHORT)
+            .show()
     }
-*/
+
 }
