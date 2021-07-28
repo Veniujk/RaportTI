@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.fragment_raport_zone6.*
 import java.util.*
 
 class  RaportZone6Fragment : BaseFragment() {
-    private val Report_DEBUG = "REPORT_DEBUG"
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
 
@@ -88,7 +87,6 @@ class  RaportZone6Fragment : BaseFragment() {
                 "lr17" to zone6_lr17,
                 "lr18" to zone6_lr18
                )
-               if (zone6_room != null) {
 
                    cloud.collection("raports")
                        .add(data)
@@ -102,12 +100,13 @@ class  RaportZone6Fragment : BaseFragment() {
                        .addOnFailureListener { e ->
                            Log.w(ContentValues.TAG, "Error adding document", e)
                        }
+                   findNavController()
+                       .navigate(RaportZone6FragmentDirections.actionRaportFragmentz6ToHomeFragment().actionId)
+                   Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
+                       .show()
                }
-            findNavController()
-                .navigate(RaportZone6FragmentDirections.actionRaportFragmentz6ToHomeFragment().actionId)
-            Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
-                .show()
+
            }
     }
-}
+
 

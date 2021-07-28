@@ -139,9 +139,8 @@
 
         <Button
             android:id="@+id/zone3_report_send"
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="156dp"
             android:layout_marginTop="20dp"
             android:text="Wyślij Raport" />
 

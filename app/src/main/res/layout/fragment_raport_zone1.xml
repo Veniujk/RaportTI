@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Sufity - wolne od pajęczyn" />
+            android:text="Sufity - wolne od pajęczyn." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp2"
@@ -152,13 +152,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Lustra - wolne od zabrudzeń, kurzu, śladów palców i ." />
+            android:text="Lustra - wolne od zabrudzeń, kurzu i śladów palców." />
 
         <Button
             android:id="@+id/zone1_report_send"
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="156dp"
             android:layout_marginTop="20dp"
             android:text="Wyślij Raport" />
 

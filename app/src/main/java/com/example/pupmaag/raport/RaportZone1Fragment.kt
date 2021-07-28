@@ -23,9 +23,7 @@ import java.util.*
 
 
 class RaportZone1Fragment : BaseFragment(){
-    private val REPO_DEBUG = "REPORT_DEBUG"
     private val cloud = FirebaseFirestore.getInstance()
-    private val homeVm by viewModels<HomeViewModel>()
     private val auth = FirebaseAuth.getInstance()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,52 +52,33 @@ class RaportZone1Fragment : BaseFragment(){
     private fun openReportZone1Click() {
 
         zone1_report_send.setOnClickListener {
-            val zone1_room = zone1_name_spinner.selectedItem
-            val zone1_lr1 = zone1_report_lp1.isChecked
-            val zone1_lr2 = zone1_report_lp2.isChecked
-            val zone1_lr3 = zone1_report_lp3.isChecked
-            val zone1_lr4 = zone1_report_lp4.isChecked
-            val zone1_lr5 = zone1_report_lp5.isChecked
-            val zone1_lr6 = zone1_report_lp6.isChecked
-            val zone1_lr7 = zone1_report_lp7.isChecked
-            val zone1_lr8 = zone1_report_lp8.isChecked
-            val zone1_lr9 = zone1_report_lp9.isChecked
-            val zone1_lr10 = zone1_report_lp10.isChecked
-            val zone1_lr11 = zone1_report_lp11.isChecked
-            val zone1_lr12 = zone1_report_lp12.isChecked
-            val zone1_lr13 = zone1_report_lp13.isChecked
-            val zone1_lr14 = zone1_report_lp14.isChecked
-            val zone1_lr15 = zone1_report_lp15.isChecked
-            val zone1_lr16 = zone1_report_lp16.isChecked
-            val zone1_lr17 = zone1_report_lp17.isChecked
-            val zone1_lr18 = zone1_report_lp18.isChecked
             val data = hashMapOf(
                    "cid" to "NBP",
                    "uid" to auth.currentUser?.uid,
                    "zone" to "Strefa 1",
                    "date" to Timestamp(Date()),
-                   "name" to zone1_room,
-                   "lr1" to zone1_lr1,
-                   "lr2" to zone1_lr2,
-                   "lr3" to zone1_lr3,
-                   "lr4" to zone1_lr4,
-                   "lr5" to zone1_lr5,
-                   "lr6" to zone1_lr6,
-                   "lr7" to zone1_lr7,
-                   "lr8" to zone1_lr8,
-                   "lr9" to zone1_lr9,
-                   "lr10" to zone1_lr10,
-                   "lr11" to zone1_lr11,
-                   "lr12" to zone1_lr12,
-                   "lr13" to zone1_lr13,
-                   "lr14" to zone1_lr14,
-                   "lr15" to zone1_lr15,
-                   "lr16" to zone1_lr16,
-                   "lr17" to zone1_lr17,
-                   "lr18" to zone1_lr18,
+                   "name" to zone1_name_spinner.selectedItem,
+                   "lr1" to zone1_report_lp1.isChecked,
+                   "lr2" to zone1_report_lp2.isChecked,
+                   "lr3" to zone1_report_lp3.isChecked,
+                   "lr4" to zone1_report_lp4.isChecked,
+                   "lr5" to zone1_report_lp5.isChecked,
+                   "lr6" to zone1_report_lp6.isChecked,
+                   "lr7" to zone1_report_lp7.isChecked,
+                   "lr8" to zone1_report_lp8.isChecked,
+                   "lr9" to zone1_report_lp9.isChecked,
+                   "lr10" to zone1_report_lp10.isChecked,
+                   "lr11" to zone1_report_lp11.isChecked,
+                   "lr12" to zone1_report_lp12.isChecked,
+                   "lr13" to zone1_report_lp13.isChecked,
+                   "lr14" to zone1_report_lp14.isChecked,
+                   "lr15" to zone1_report_lp15.isChecked,
+                   "lr16" to zone1_report_lp16.isChecked,
+                   "lr17" to zone1_report_lp17.isChecked,
+                   "lr18" to zone1_report_lp18.isChecked,
                )
 
-               if (zone1_room != null) {
+
 
                    cloud.collection("raports")
                        .add(data)
@@ -127,6 +106,6 @@ class RaportZone1Fragment : BaseFragment(){
 
 
            }
-    }
+
 
 

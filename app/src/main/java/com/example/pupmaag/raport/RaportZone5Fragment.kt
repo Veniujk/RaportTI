@@ -44,36 +44,23 @@ class  RaportZone5Fragment : BaseFragment() {
     private fun openReportZone5Click() {
 
         zone5_report_send.setOnClickListener {
-            val zone5_room = zone5_name_spinner.selectedItem
-            val zone5_lr1 = zone5_report_lp1.isChecked
-            val zone5_lr2 = zone5_report_lp2.isChecked
-            val zone5_lr3 = zone5_report_lp3.isChecked
-            val zone5_lr4 = zone5_report_lp4.isChecked
-            val zone5_lr5 = zone5_report_lp5.isChecked
-            val zone5_lr6 = zone5_report_lp6.isChecked
-            val zone5_lr7 = zone5_report_lp7.isChecked
-            val zone5_lr8 = zone5_report_lp8.isChecked
-            val zone5_lr9 = zone5_report_lp9.isChecked
-
             val data = hashMapOf(
                 "cid" to "NBP",
                 "uid" to auth.currentUser?.uid,
                 "zone" to "Strefa 5",
                 "date" to Timestamp(Date()),
-                "name" to zone5_room,
-                "lr1" to zone5_lr1,
-                "lr2" to zone5_lr2,
-                "lr3" to zone5_lr3,
-                "lr4" to zone5_lr4,
-                "lr5" to zone5_lr5,
-                "lr6" to zone5_lr6,
-                "lr7" to zone5_lr7,
-                "lr8" to zone5_lr8,
-                "lr9" to zone5_lr9
+                "name" to zone5_name_spinner.selectedItem,
+                "lr1" to zone5_report_lp1.isChecked,
+                "lr2" to zone5_report_lp2.isChecked,
+                "lr3" to zone5_report_lp3.isChecked,
+                "lr4" to zone5_report_lp4.isChecked,
+                "lr5" to zone5_report_lp5.isChecked,
+                "lr6" to zone5_report_lp6.isChecked,
+                "lr7" to zone5_report_lp7.isChecked,
+                "lr8" to zone5_report_lp8.isChecked,
+                "lr9" to zone5_report_lp9.isChecked
                )
-               if (zone5_room != null) {
-
-                   cloud.collection("raports")
+                    cloud.collection("raports")
                        .add(data)
 
                        .addOnSuccessListener { documentReference ->
@@ -85,12 +72,13 @@ class  RaportZone5Fragment : BaseFragment() {
                        .addOnFailureListener { e ->
                            Log.w(ContentValues.TAG, "Error adding document", e)
                        }
-               }
             findNavController()
                 .navigate(RaportZone5FragmentDirections.actionRaportFragmentz5ToHomeFragment().actionId)
             Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                 .show()
+               }
+
            }
     }
-}
+
 
