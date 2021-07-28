@@ -1,10 +1,13 @@
 package com.example.pupmaag
 
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.transition.TransitionInflater
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.pupmaag.activites.MainActivity
+import kotlin.math.roundToInt
 
 abstract class BaseFragment: Fragment() {
 
@@ -21,5 +24,15 @@ abstract class BaseFragment: Fragment() {
         startActivity(intent)
     }
 
+    fun control(data:HashMap<Any,Any>): Int {
+        var suma = 0
+        for ((key,value) in data) {
 
+            if (value == true) {
+                suma += 1
+            }
+        }
+
+        return ((suma.toDouble() / data.size) * 100).roundToInt()
+    }
 }

@@ -39,9 +39,12 @@ class RaportAdapter(private val listener: OnRaportItemLongClick) :
         val name = holder.itemView.findViewById<TextView>(R.id.roomName)
         val zone = holder.itemView.findViewById<TextView>(R.id.raportZone)
         val data = holder.itemView.findViewById<TextView>(R.id.raportDate)
+        val control = holder.itemView.findViewById<TextView>(R.id.raportControl)
         name.text = raportsList[holder.adapterPosition].name
         zone.text = raportsList[holder.adapterPosition].zone
         data.text = SimpleDateFormat("dd/MM/yyyy HH:mm").format(raportsList[holder.adapterPosition].date?.toDate())
+        control.text = "Wynik kontroli: " + raportsList[holder.adapterPosition].control + "%"
+
        }
 
     override fun getItemCount(): Int {

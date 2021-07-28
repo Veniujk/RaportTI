@@ -12,20 +12,20 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:layout_width="408dp"
+        android:layout_width="match_parent"
         android:layout_height="56dp">
 
 
         <TextView
             android:id="@+id/roomName"
-            android:layout_width="392dp"
-            android:layout_height="33dp"
+            android:layout_width="406dp"
+            android:layout_height="35dp"
             android:layout_marginTop="20dp"
             android:text="@string/row_name"
             android:textColor="@color/light_black"
             android:textSize="@dimen/tv_profile_page_text_size"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.094"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,14 +33,13 @@
             android:id="@+id/raportDate"
             android:layout_width="148dp"
             android:layout_height="19dp"
+            android:layout_marginEnd="52dp"
             android:text="@string/row_date"
             android:textColor="@color/light_black"
             android:textSize="15sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.938"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="0dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/raportZone"
@@ -56,6 +55,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/raportControl"
+            android:layout_width="148dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/row_control"
+            android:textColor="@color/light_black"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

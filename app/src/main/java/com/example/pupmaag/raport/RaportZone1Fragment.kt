@@ -52,12 +52,12 @@ class RaportZone1Fragment : BaseFragment(){
     private fun openReportZone1Click() {
 
         zone1_report_send.setOnClickListener {
-            val data = hashMapOf(
-                   "cid" to "NBP",
-                   "uid" to auth.currentUser?.uid,
-                   "zone" to "Strefa 1",
-                   "date" to Timestamp(Date()),
-                   "name" to zone1_name_spinner.selectedItem,
+            val data = hashMapOf<Any,Any>(
+                  //  "cid" to "NBP",
+                  // "uid" to auth.currentUser?.uid,
+                  // "zone" to "Strefa 1",
+                  // "date" to Timestamp(Date()),
+                  // "name" to zone1_name_spinner.selectedItem,
                    "lr1" to zone1_report_lp1.isChecked,
                    "lr2" to zone1_report_lp2.isChecked,
                    "lr3" to zone1_report_lp3.isChecked,
@@ -81,6 +81,12 @@ class RaportZone1Fragment : BaseFragment(){
                     "lr23" to zone1_report_lp23.isChecked,//okresowo dlatego start od 20
 
                )
+            data.put("control",control(data).toString())
+            auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
+            data.put("name", zone1_name_spinner.selectedItem)
+            data.put("zone", "Strefa 1")
+            data.put("date", Timestamp(Date()))
+            data.put("cid", "NBP")
 
 
                    cloud.collection("raports")

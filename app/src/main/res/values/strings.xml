@@ -56,6 +56,8 @@
     <string name="row_name">Nazwa pokoju</string>
     <string name="row_date">Data kontroli</string>
     <string name="row_zone">Strefa</string>
+    <string name="row_control">Zaliczenie</string>
+
 
 
 </resources>
