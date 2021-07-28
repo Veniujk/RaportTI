@@ -16,6 +16,7 @@ import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
+import kotlinx.android.synthetic.main.fragment_raport_zone3.*
 import kotlinx.android.synthetic.main.fragment_raport_zone4.*
 import java.util.*
 
@@ -68,7 +69,14 @@ class  RaportZone4Fragment : BaseFragment() {
                 "lr12" to zone4_report_lp12.isChecked,
                 "lr13" to zone4_report_lp13.isChecked,
                 "lr14" to zone4_report_lp14.isChecked,
-                "lr15" to zone4_report_lp15.isChecked
+                "lr15" to zone4_report_lp15.isChecked,
+                "lr21" to zone4_report_lp21.isChecked, //okresowo dlatego start od 20
+                "lr22" to zone4_report_lp22.isChecked,//okresowo dlatego start od 20
+                "lr23" to zone4_report_lp23.isChecked,//okresowo dlatego start od 20
+                "lr24" to zone4_report_lp24.isChecked, //okresowo dlatego start od 20
+                "lr25" to zone4_report_lp25.isChecked,//okresowo dlatego start od 20
+                "lr26" to zone4_report_lp26.isChecked,//okresowo dlatego start od 20
+
                )
                    cloud.collection("raports")
                        .add(data)

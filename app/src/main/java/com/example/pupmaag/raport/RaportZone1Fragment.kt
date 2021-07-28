@@ -76,8 +76,11 @@ class RaportZone1Fragment : BaseFragment(){
                    "lr16" to zone1_report_lp16.isChecked,
                    "lr17" to zone1_report_lp17.isChecked,
                    "lr18" to zone1_report_lp18.isChecked,
-               )
+                    "lr21" to zone1_report_lp21.isChecked, //okresowo dlatego start od 20
+                    "lr22" to zone1_report_lp22.isChecked,//okresowo dlatego start od 20
+                    "lr23" to zone1_report_lp23.isChecked,//okresowo dlatego start od 20
 
+               )
 
 
                    cloud.collection("raports")

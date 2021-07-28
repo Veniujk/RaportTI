@@ -33,60 +33,43 @@ class  RaportZone6Fragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         openReportZone6Click()
-        val rooms = arrayOf("1","2","3","4")
+      /*  val rooms = arrayOf("1","2","3","4")
         val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        zone6_name_spinner.adapter = arrayAdapter
+        zone6_name_spinner.adapter = arrayAdapter*/
     }
 
     private fun openReportZone6Click() {
 
         zone6_report_send.setOnClickListener {
-            val zone6_room = zone6_name_spinner.selectedItem
-            val zone6_lr1 = zone6_report_lp1.isChecked
-            val zone6_lr2 = zone6_report_lp2.isChecked
-            val zone6_lr3 = zone6_report_lp3.isChecked
-            val zone6_lr4 = zone6_report_lp4.isChecked
-            val zone6_lr5 = zone6_report_lp5.isChecked
-            val zone6_lr6 = zone6_report_lp6.isChecked
-            val zone6_lr7 = zone6_report_lp7.isChecked
-            val zone6_lr8 = zone6_report_lp8.isChecked
-            val zone6_lr9 = zone6_report_lp9.isChecked
-            val zone6_lr10 = zone6_report_lp10.isChecked
-            val zone6_lr11 = zone6_report_lp11.isChecked
-            val zone6_lr12 = zone6_report_lp12.isChecked
-            val zone6_lr13 = zone6_report_lp13.isChecked
-            val zone6_lr14 = zone6_report_lp14.isChecked
-            val zone6_lr15 = zone6_report_lp15.isChecked
-            val zone6_lr16 = zone6_report_lp16.isChecked
-            val zone6_lr17 = zone6_report_lp17.isChecked
-            val zone6_lr18 = zone6_report_lp18.isChecked
             val data = hashMapOf(
                 "cid" to "NBP",
                 "uid" to auth.currentUser?.uid,
                 "zone" to "Strefa 6",
                 "date" to Timestamp(Date()),
-                "name" to zone6_room,
-                "lr1" to zone6_lr1,
-                "lr2" to zone6_lr2,
-                "lr3" to zone6_lr3,
-                "lr4" to zone6_lr4,
-                "lr5" to zone6_lr5,
-                "lr6" to zone6_lr6,
-                "lr7" to zone6_lr7,
-                "lr8" to zone6_lr8,
-                "lr9" to zone6_lr9,
-                "lr10" to zone6_lr10,
-                "lr11" to zone6_lr11,
-                "lr12" to zone6_lr12,
-                "lr13" to zone6_lr13,
-                "lr14" to zone6_lr14,
-                "lr15" to zone6_lr15,
-                "lr16" to zone6_lr16,
-                "lr17" to zone6_lr17,
-                "lr18" to zone6_lr18
-               )
+                "name" to "zewnątrz obiektu – w okresie od 16 IV do 14 x",
+                "lr1" to zone6_report_lp1.isChecked,
+                "lr2" to zone6_report_lp2.isChecked,
+                "lr3" to zone6_report_lp3.isChecked,
+                "lr4" to zone6_report_lp4.isChecked,
+                "lr5" to zone6_report_lp5.isChecked,
+                "lr6" to zone6_report_lp6.isChecked,
+                "lr7" to zone6_report_lp7.isChecked,
+                "lr8" to zone6_report_lp8.isChecked,
+                "lr9a" to zone6_report_lp9a.isChecked,
+                "lr9b" to zone6_report_lp9b.isChecked,
+                "lr9c" to zone6_report_lp9c.isChecked,
+                "lr9d" to zone6_report_lp9d.isChecked,
+                "lr21" to zone6_report_lp21.isChecked,
+                "lr22" to zone6_report_lp22.isChecked,
+                "lr23" to zone6_report_lp23.isChecked,
+                "lr24" to zone6_report_lp24.isChecked,
+                "lr25" to zone6_report_lp25.isChecked,
+                "lr26" to zone6_report_lp26.isChecked,
+                "lr27" to zone6_report_lp27.isChecked,
+                "lr28" to zone6_report_lp28.isChecked,
+                 )
 
                    cloud.collection("raports")
                        .add(data)

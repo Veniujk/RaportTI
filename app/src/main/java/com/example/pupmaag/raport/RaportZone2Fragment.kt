@@ -65,7 +65,13 @@ class  RaportZone2Fragment : BaseFragment() {
                 "lr12" to zone2_report_lp12.isChecked,
                 "lr13" to zone2_report_lp13.isChecked,
                 "lr14" to zone2_report_lp14.isChecked,
-                "lr15" to zone2_report_lp15.isChecked
+                "lr15" to zone2_report_lp15.isChecked,
+                "lr21" to zone2_report_lp21.isChecked, //okresowo dlatego start od 20
+                "lr22" to zone2_report_lp22.isChecked,//okresowo dlatego start od 20
+                "lr23" to zone2_report_lp23.isChecked,//okresowo dlatego start od 20
+                "lr24" to zone2_report_lp24.isChecked, //okresowo dlatego start od 20
+                "lr25" to zone2_report_lp25.isChecked,//okresowo dlatego start od 20
+
                )
 
 

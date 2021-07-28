@@ -15,6 +15,7 @@ import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
+import kotlinx.android.synthetic.main.fragment_raport_zone3.*
 import kotlinx.android.synthetic.main.fragment_raport_zone5.*
 import java.util.*
 
@@ -34,11 +35,11 @@ class  RaportZone5Fragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         openReportZone5Click()
-        val rooms = arrayOf("1","2","3","4")
+      /* val rooms = arrayOf("1","2","3","4")
         val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        zone5_name_spinner.adapter = arrayAdapter
+        zone5_name_spinner.adapter = arrayAdapter*/
     }
 
     private fun openReportZone5Click() {
@@ -49,17 +50,21 @@ class  RaportZone5Fragment : BaseFragment() {
                 "uid" to auth.currentUser?.uid,
                 "zone" to "Strefa 5",
                 "date" to Timestamp(Date()),
-                "name" to zone5_name_spinner.selectedItem,
+                "name" to "zewnątrz obiektu – w okresie od 15 X do 15 IV",
                 "lr1" to zone5_report_lp1.isChecked,
                 "lr2" to zone5_report_lp2.isChecked,
                 "lr3" to zone5_report_lp3.isChecked,
                 "lr4" to zone5_report_lp4.isChecked,
                 "lr5" to zone5_report_lp5.isChecked,
                 "lr6" to zone5_report_lp6.isChecked,
-                "lr7" to zone5_report_lp7.isChecked,
-                "lr8" to zone5_report_lp8.isChecked,
-                "lr9" to zone5_report_lp9.isChecked
+                "lr21" to zone5_report_lp21.isChecked, //okresowo dlatego start od 20
+                "lr22" to zone5_report_lp22.isChecked,//okresowo dlatego start od 20
+                "lr23" to zone5_report_lp23.isChecked,//okresowo dlatego start od 20
+                "lr24" to zone5_report_lp24.isChecked, //okresowo dlatego start od 20
+                "lr25" to zone5_report_lp25.isChecked,//okresowo dlatego start od 20
+                "lr26" to zone5_report_lp26.isChecked,//okresowo dlatego start od 20
                )
+
                     cloud.collection("raports")
                        .add(data)
 

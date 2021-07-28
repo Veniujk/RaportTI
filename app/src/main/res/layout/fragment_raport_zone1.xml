@@ -152,8 +152,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Lustra - wolne od zabrudzeń, kurzu i śladów palców." />
+            android:text="Lustra - wolne od zabrudzeń, kurzu i śladów palców i smug." />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/zone1_TextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:text="Okresowo: " />
+        <CheckBox
+            android:id="@+id/zone1_report_lp21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Kąty i miejsca trudnodostępne - wolneod kurzu, zabrudzeń i pajęczyn." />
+        <CheckBox
+            android:id="@+id/zone1_report_lp22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Oprawy oświetleniowe - wolne od kurzu, zabrudzeń i pajęczyn." />
+        <CheckBox
+            android:id="@+id/zone1_report_lp23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Kratki wentylacyjne - wolne od kurzu, zabrudzeń i pajęczyn." />
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/zone1_report_send"
             android:layout_width="match_parent"
