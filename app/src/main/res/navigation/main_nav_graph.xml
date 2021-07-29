@@ -46,7 +46,11 @@
         tools:layout="@layout/fragment_profile"
         android:id="@+id/profileFragment"
         android:name="com.example.pupmaag.profile.ProfileFragment"
-        android:label="Twój Profil" />
+        android:label="Twój Profil" >
+        <action
+            android:id="@+id/action_profileFragment_to_raportFragmentz1"
+            app:destination="@id/raportFragmentz1" />
+    </fragment>
 
     <fragment
         tools:layout="@layout/fragment_raport_zone1"

@@ -1,6 +1,8 @@
 package com.example.pupmaag.profile
 
 import android.app.Activity.RESULT_OK
+import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -8,6 +10,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.pupmaag.BaseFragment
@@ -16,8 +19,11 @@ import com.example.pupmaag.data.Raport
 import com.example.pupmaag.data.User
 import com.example.pupmaag.home.RaportAdapter
 import com.example.pupmaag.home.OnRaportItemLongClick
+import com.example.pupmaag.raport.RaportFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_profile.*
 import java.io.ByteArrayOutputStream
 import java.lang.Exception
@@ -28,6 +34,7 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
     private val auth = FirebaseAuth.getInstance()
     private val profileVm by viewModels<ProfileViewModel>()
     private val adapter = RaportAdapter(this)
+    private val cloud = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
@@ -124,11 +131,17 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
 
             val map = mapOf("name" to name, "surname" to surname)
             profileVm.editProfileData(map)
+            Snackbar.make(requireView(), "Zaktualizowano dane!", Snackbar.LENGTH_SHORT)
+                .show()
         }
     }
 
     override fun onRaportLongClick(raport: Raport, position: Int) {
-        Snackbar.make(requireView(), "Hello there!", Snackbar.LENGTH_SHORT)
+
+        /*findNavController()
+            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz1().actionId)
+*/
+        Snackbar.make(requireView(), "in Building!", Snackbar.LENGTH_SHORT)
             .show()
     }
 

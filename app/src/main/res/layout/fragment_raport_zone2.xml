@@ -170,14 +170,14 @@
                 android:text="Kratki wentylacyjne - wolne od kurzu, zabrudzeń i pajęczyn." />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <!--
+                <Button
+                    android:id="@+id/zone2_report_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Wyślij Raport" />
+        -->
 
-        <Button
-            android:id="@+id/zone2_report_send"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Wyślij Raport" />
-
-
-    </LinearLayout>
-</ScrollView>
+            </LinearLayout>
+        </ScrollView>

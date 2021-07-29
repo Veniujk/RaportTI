@@ -3,9 +3,7 @@ package com.example.pupmaag.raport
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
@@ -21,8 +19,11 @@ import java.util.*
 class  RaportZone6Fragment : BaseFragment() {
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
 
-
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,9 +31,23 @@ class  RaportZone6Fragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_raport_zone6, container, false)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.send_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.send_action -> {
+                openReportZone6Click()
+                // requireActivity().finish()
+            }
+        }
+        return false
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        openReportZone6Click()
+      //  openReportZone6Click()
       /*  val rooms = arrayOf("1","2","3","4")
         val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -42,13 +57,8 @@ class  RaportZone6Fragment : BaseFragment() {
 
     private fun openReportZone6Click() {
 
-        zone6_report_send.setOnClickListener {
-            val data = hashMapOf(
-                "cid" to "NBP",
-                "uid" to auth.currentUser?.uid,
-                "zone" to "Strefa 6",
-                "date" to Timestamp(Date()),
-                "name" to "zewnątrz obiektu – w okresie od 16 IV do 14 x",
+       // zone6_report_send.setOnClickListener {
+            val data = hashMapOf<Any,Any>(
                 "lr1" to zone6_report_lp1.isChecked,
                 "lr2" to zone6_report_lp2.isChecked,
                 "lr3" to zone6_report_lp3.isChecked,
@@ -70,6 +80,12 @@ class  RaportZone6Fragment : BaseFragment() {
                 "lr27" to zone6_report_lp27.isChecked,
                 "lr28" to zone6_report_lp28.isChecked,
                  )
+        data.put("control",control(data).toString())
+        auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
+        data.put("name", "zewnątrz obiektu – w okresie od 16 IV do 14 x")
+        data.put("zone", "Strefa 1")
+        data.put("date", Timestamp(Date()))
+        data.put("cid", "NBP")
 
                    cloud.collection("raports")
                        .add(data)
@@ -90,6 +106,6 @@ class  RaportZone6Fragment : BaseFragment() {
                }
 
            }
-    }
+    //}
 
 

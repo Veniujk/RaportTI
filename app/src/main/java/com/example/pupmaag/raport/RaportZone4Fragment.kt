@@ -4,9 +4,7 @@ package com.example.pupmaag.raport
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
@@ -23,16 +21,35 @@ import java.util.*
 class  RaportZone4Fragment : BaseFragment() {
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_raport_zone4, container, false)
     }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.send_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.send_action -> {
+                openReportZone4Click()
+                // requireActivity().finish()
+            }
+        }
+        return false
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        openReportZone4Click()
+       // openReportZone4Click()
         val rooms = arrayOf("Pomieszczenia gospodarcze",
                             "Pomieszczenia techniczne",
                             "Ciągi komunikacyjne",
@@ -48,13 +65,13 @@ class  RaportZone4Fragment : BaseFragment() {
 
     private fun openReportZone4Click() {
 
-        zone4_report_send.setOnClickListener {
-            val data = hashMapOf(
-                "cid" to "NBP",
+      //  zone4_report_send.setOnClickListener {
+            val data = hashMapOf<Any,Any>(
+              /*  "cid" to "NBP",
                 "uid" to auth.currentUser?.uid,
                 "zone" to "Strefa 4",
                 "date" to Timestamp(Date()),
-                "name" to zone4_name_spinner.selectedItem,
+                "name" to zone4_name_spinner.selectedItem,*/
                 "lr1" to zone4_report_lp1.isChecked,
                 "lr2" to zone4_report_lp2.isChecked,
                 "lr3" to zone4_report_lp3.isChecked,
@@ -78,6 +95,14 @@ class  RaportZone4Fragment : BaseFragment() {
                 "lr26" to zone4_report_lp26.isChecked,//okresowo dlatego start od 20
 
                )
+
+            data.put("control",control(data).toString())
+            auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
+            data.put("name", zone4_name_spinner.selectedItem)
+            data.put("zone", "Strefa 1")
+            data.put("date", Timestamp(Date()))
+            data.put("cid", "NBP")
+
                    cloud.collection("raports")
                        .add(data)
 
@@ -97,6 +122,6 @@ class  RaportZone4Fragment : BaseFragment() {
                }
 
            }
-    }
+   // }
 
 

@@ -10,6 +10,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.example.pupmaag.data.Raport
 import com.example.pupmaag.data.User
+import com.example.pupmaag.home.OnRaportItemLongClick
 
 
 class FirebaseRepository {
@@ -116,6 +117,18 @@ class FirebaseRepository {
         cloud.collection("users")
             .document(auth.currentUser?.uid!!)
             .update("userRaports", FieldValue.arrayRemove(raport.id))
+            .addOnSuccessListener {
+                Log.d(REPO_DEBUG, "Usunieta z ulubionych")
+            }
+            .addOnFailureListener{
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+    }
+
+    fun editRaports(raport : Raport){
+        cloud.collection("raports")
+            .document()
+            .update("id", FieldValue.arrayRemove(raport.id))
             .addOnSuccessListener {
                 Log.d(REPO_DEBUG, "Usunieta z ulubionych")
             }

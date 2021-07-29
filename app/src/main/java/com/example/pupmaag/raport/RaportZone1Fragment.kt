@@ -1,6 +1,5 @@
 package com.example.pupmaag.raport
 
-
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
@@ -12,15 +11,14 @@ import com.example.pupmaag.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import java.util.*
 
-
 class RaportZone1Fragment : BaseFragment(){
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
         super.onCreate(savedInstanceState)
@@ -54,7 +52,7 @@ class RaportZone1Fragment : BaseFragment(){
       //  openReportZone1Click()
 
 
-        val rooms = arrayOf("Zespoły sekretarsko-dyrektorskie",
+        val rooms = arrayOf(  "Zespoły sekretarsko-dyrektorskie",
                               "Sala operacyjna",
                               "Hol główny z wejsciem do obiektu",
                               "Pomieszczenia inne w obrębie lokalizacji")
@@ -98,16 +96,16 @@ class RaportZone1Fragment : BaseFragment(){
             data.put("zone", "Strefa 1")
             data.put("date", Timestamp(Date()))
             data.put("cid", "NBP")
+           // data.put("id", newCityRef)
+                    val newRaportRef = cloud.collection("raports").document()
 
-
-                   cloud.collection("raports")
-                       .add(data)
+                 //  cloud.collection("raports")
+                    //   .add(data)
+                        newRaportRef.set(data)
 
                        .addOnSuccessListener { documentReference ->
-                           Log.d(
-                               ContentValues.TAG,
-                               "DocumentSnapshot written with ID: ${documentReference.id}"
-                           )
+
+
                        }
                        .addOnFailureListener { e ->
                            Log.w(ContentValues.TAG, "Error adding document", e)

@@ -62,6 +62,7 @@ class HomeFragment : BaseFragment(), OnRaportItemLongClick {
     override fun onRaportLongClick(raport: Raport, position: Int) {
         Snackbar.make(requireView(), "Hello there", Snackbar.LENGTH_SHORT)
             .show()
+
     }
 
 }
