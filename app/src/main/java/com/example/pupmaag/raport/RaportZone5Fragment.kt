@@ -78,7 +78,7 @@ class  RaportZone5Fragment : BaseFragment() {
         data.put("control",control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
         data.put("name", "zewnątrz obiektu – w okresie od 15 X do 15 IV")
-        data.put("zone", "Strefa 1")
+        data.put("zone", "Strefa 5")
         data.put("date", Timestamp(Date()))
         data.put("cid", "NBP")
 

@@ -15,6 +15,24 @@
         <action
             android:id="@+id/action_homeFragment_to_raportFragment"
             app:destination="@id/raportFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_raportFragmentz1"
+            app:destination="@id/raportFragmentz1" />
+        <action
+            android:id="@+id/action_homeFragment_to_raportFragmentz2"
+            app:destination="@id/raportFragmentz2" />
+        <action
+            android:id="@+id/action_homeFragment_to_raportFragmentz4"
+            app:destination="@id/raportFragmentz4" />
+        <action
+            android:id="@+id/action_homeFragment_to_raportFragmentz3"
+            app:destination="@id/raportFragmentz3" />
+        <action
+            android:id="@+id/action_homeFragment_to_raportFragmentz5"
+            app:destination="@id/raportFragmentz5" />
+        <action
+            android:id="@+id/action_homeFragment_to_raportFragmentz6"
+            app:destination="@id/raportFragmentz6" />
     </fragment>
     <fragment
         tools:layout="@layout/fragment_raport"
@@ -50,6 +68,21 @@
         <action
             android:id="@+id/action_profileFragment_to_raportFragmentz1"
             app:destination="@id/raportFragmentz1" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportFragmentz2"
+            app:destination="@id/raportFragmentz2" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportFragmentz4"
+            app:destination="@id/raportFragmentz4" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportFragmentz3"
+            app:destination="@id/raportFragmentz3" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportFragmentz5"
+            app:destination="@id/raportFragmentz5" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportFragmentz6"
+            app:destination="@id/raportFragmentz6" />
     </fragment>
 
     <fragment

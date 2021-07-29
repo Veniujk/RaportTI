@@ -99,7 +99,7 @@ class  RaportZone4Fragment : BaseFragment() {
             data.put("control",control(data).toString())
             auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
             data.put("name", zone4_name_spinner.selectedItem)
-            data.put("zone", "Strefa 1")
+            data.put("zone", "Strefa 4")
             data.put("date", Timestamp(Date()))
             data.put("cid", "NBP")
 

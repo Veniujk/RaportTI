@@ -139,12 +139,41 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
 
     override fun onRaportLongClick(raport: Raport, position: Int) {
         val bundle = bundleOf("raport" to raport)
+
+        if (raport.zone == "Strefa 1"){
         findNavController()
-            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz1().actionId,bundle)
+            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz1().actionId,bundle)}
+        else{
+            if (raport.zone == "Strefa 2"){
+            findNavController()
+                .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz2().actionId,bundle)}
+            else{
+                if (raport.zone == "Strefa 3"){
+                    findNavController()
+                        .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz3().actionId,bundle)}
+                else{
+                    if (raport.zone == "Strefa 4"){
+                        findNavController()
+                            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz4().actionId,bundle)}
+                    else {
+                        if (raport.zone == "Strefa 5") {
+                            findNavController()
+                                .navigate(
+                                    ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz5().actionId,
+                                    bundle
+                                )
+                        } else {
+                            findNavController()
+                                .navigate(
+                                    ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz6().actionId,
+                                    bundle
+                                )
+                        }
 
-        Snackbar.make(requireView(), "in Building!", Snackbar.LENGTH_SHORT)
-            .show()
+                    }
+                }
+            }
+        }
     }
-
 
 }
