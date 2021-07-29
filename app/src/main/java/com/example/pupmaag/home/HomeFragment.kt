@@ -4,11 +4,13 @@ package com.example.pupmaag.home
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
 import com.example.pupmaag.data.Raport
+import com.example.pupmaag.raport.RaportFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.list_row.*
@@ -60,6 +62,7 @@ class HomeFragment : BaseFragment(), OnRaportItemLongClick {
 
 
     override fun onRaportLongClick(raport: Raport, position: Int) {
+
         Snackbar.make(requireView(), "Hello there", Snackbar.LENGTH_SHORT)
             .show()
 

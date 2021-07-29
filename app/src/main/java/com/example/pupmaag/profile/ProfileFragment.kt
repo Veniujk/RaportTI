@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.*
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -137,10 +138,10 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
     }
 
     override fun onRaportLongClick(raport: Raport, position: Int) {
+        val bundle = bundleOf("raport" to raport)
+        findNavController()
+            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz1().actionId,bundle)
 
-        /*findNavController()
-            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz1().actionId)
-*/
         Snackbar.make(requireView(), "in Building!", Snackbar.LENGTH_SHORT)
             .show()
     }
