@@ -156,7 +156,7 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
                         findNavController()
                             .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz4().actionId,bundle)}
                     else {
-                        if (raport.zone == "Strefa 5") {
+                        if (raport.zone == "Strefa 5 - okres zimowy") {
                             findNavController()
                                 .navigate(
                                     ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz5().actionId,

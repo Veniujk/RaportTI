@@ -5,14 +5,17 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
+import com.example.pupmaag.data.Raport
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
+import kotlinx.android.synthetic.main.fragment_raport_zone5.*
 import kotlinx.android.synthetic.main.fragment_raport_zone6.*
 import java.util.*
 
@@ -39,7 +42,7 @@ class  RaportZone6Fragment : BaseFragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.send_action -> {
-                openReportZone6Click()
+                openReportZone6Click(arguments?.get("raport"))
                 // requireActivity().finish()
             }
         }
@@ -53,11 +56,58 @@ class  RaportZone6Fragment : BaseFragment() {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         zone6_name_spinner.adapter = arrayAdapter*/
+        val arguementRaport = arguments?.get("raport")
+
+        if (arguementRaport != null) {
+            editReportZoneClick(arguementRaport as Raport)
+        }
+
+    }
+    private fun getIndex(spinner: Spinner, myString: String): Int {
+        for (i in 0 until spinner.count) {
+
+            if (spinner.getItemAtPosition(i).toString().equals(myString, ignoreCase = true)) {
+
+                return i
+            }
+        }
+        return 0
     }
 
-    private fun openReportZone6Click() {
+    private fun editReportZoneClick(raport: Raport) {
+        /* raport.name?.let { getIndex(zone1_name_spinner, it) }?.let {
+             zone1_name_spinner.setSelection(it)
+         }*/
+        raport.lr1?.let { zone6_report_lp1.setChecked(it) }
+        raport.lr2?.let { zone6_report_lp2.setChecked(it) }
+        raport.lr3?.let { zone6_report_lp3.setChecked(it) }
+        raport.lr4?.let { zone6_report_lp4.setChecked(it) }
+        raport.lr5?.let { zone6_report_lp5.setChecked(it) }
+        raport.lr6?.let { zone6_report_lp6.setChecked(it) }
+        raport.lr7?.let { zone6_report_lp1.setChecked(it) }
+        raport.lr8?.let { zone6_report_lp2.setChecked(it) }
+        raport.lr9a?.let { zone6_report_lp9a.setChecked(it) }
+        raport.lr9b?.let { zone6_report_lp9b.setChecked(it) }
+        raport.lr9c?.let { zone6_report_lp9c.setChecked(it) }
+        raport.lr9d?.let { zone6_report_lp9d.setChecked(it) }
+        raport.lr21?.let { zone6_report_lp21.setChecked(it) }
+        raport.lr22?.let { zone6_report_lp22.setChecked(it) }
+        raport.lr23?.let { zone6_report_lp23.setChecked(it) }
+        raport.lr24?.let { zone6_report_lp24.setChecked(it) }
+        raport.lr25?.let { zone6_report_lp25.setChecked(it) }
+        raport.lr26?.let { zone6_report_lp26.setChecked(it) }
+        raport.lr27?.let { zone6_report_lp25.setChecked(it) }
+        raport.lr28?.let { zone6_report_lp26.setChecked(it) }
 
-       // zone6_report_send.setOnClickListener {
+    }
+
+
+    private fun openReportZone6Click(argumentRaport: Any?) {
+
+        var raport : Raport? = null
+        if (argumentRaport != null) {
+            raport = (argumentRaport as Raport)
+        }
             val data = hashMapOf<Any,Any>(
                 "lr1" to zone6_report_lp1.isChecked,
                 "lr2" to zone6_report_lp2.isChecked,
@@ -83,10 +133,10 @@ class  RaportZone6Fragment : BaseFragment() {
         data.put("control",control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
         data.put("name", "zewnątrz obiektu – w okresie od 16 IV do 14 x")
-        data.put("zone", "Strefa 6")
+        data.put("zone", "Strefa 5 - okres letni")
         data.put("date", Timestamp(Date()))
         data.put("cid", "NBP")
-
+            if (raport == null) {
                    cloud.collection("raports")
                        .add(data)
 
@@ -104,8 +154,31 @@ class  RaportZone6Fragment : BaseFragment() {
                    Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                        .show()
                }
+            else
+            {
 
-           }
-    //}
+                raport.documentId?.let {
+                    cloud.collection("raports")
+                        .document(it)
+                        .set(data)
+                        .addOnSuccessListener {
+                            // Log.d(REPO_DEBUG, "Dodana do ulubionych")
+                        }
+                        .addOnFailureListener{
+                            //  Log.d(REPO_DEBUG, it.message.toString())
+                        }
+                }
 
 
+                findNavController()
+                    .navigate(RaportZone6FragmentDirections.actionRaportFragmentz6ToHomeFragment().actionId)
+                Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
+                    .show()
+
+            }
+
+
+    }
+
+
+}

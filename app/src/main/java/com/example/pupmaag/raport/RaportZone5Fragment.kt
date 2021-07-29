@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
+import com.example.pupmaag.data.Raport
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
@@ -42,7 +44,7 @@ class  RaportZone5Fragment : BaseFragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.send_action -> {
-                openReportZone5Click()
+                openReportZone5Click(arguments?.get("raport"))
                 // requireActivity().finish()
             }
         }
@@ -50,17 +52,50 @@ class  RaportZone5Fragment : BaseFragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       // openReportZone5Click()
-      /* val rooms = arrayOf("1","2","3","4")
-        val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, rooms )
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        zone5_name_spinner.adapter = arrayAdapter*/
+        val arguementRaport = arguments?.get("raport")
+
+        if (arguementRaport != null) {
+            editReportZoneClick(arguementRaport as Raport)
+        }
+
+    }
+    private fun getIndex(spinner: Spinner, myString: String): Int {
+        for (i in 0 until spinner.count) {
+
+            if (spinner.getItemAtPosition(i).toString().equals(myString, ignoreCase = true)) {
+
+                return i
+            }
+        }
+        return 0
     }
 
-    private fun openReportZone5Click() {
+    private fun editReportZoneClick(raport: Raport) {
+       /* raport.name?.let { getIndex(zone1_name_spinner, it) }?.let {
+            zone1_name_spinner.setSelection(it)
+        }*/
+        raport.lr1?.let { zone5_report_lp1.setChecked(it) }
+        raport.lr2?.let { zone5_report_lp2.setChecked(it) }
+        raport.lr3?.let { zone5_report_lp3.setChecked(it) }
+        raport.lr4?.let { zone5_report_lp4.setChecked(it) }
+        raport.lr5?.let { zone5_report_lp5.setChecked(it) }
+        raport.lr6?.let { zone5_report_lp6.setChecked(it) }
+        raport.lr21?.let { zone5_report_lp21.setChecked(it) }
+        raport.lr22?.let { zone5_report_lp22.setChecked(it) }
+        raport.lr23?.let { zone5_report_lp23.setChecked(it) }
+        raport.lr24?.let { zone5_report_lp24.setChecked(it) }
+        raport.lr25?.let { zone5_report_lp25.setChecked(it) }
+        raport.lr26?.let { zone5_report_lp26.setChecked(it) }
 
-      //  zone5_report_send.setOnClickListener {
+    }
+
+    private fun openReportZone5Click(argumentRaport: Any?) {
+
+        var raport : Raport? = null
+        if (argumentRaport != null) {
+            raport = (argumentRaport as Raport)
+        }
             val data = hashMapOf<Any,Any>(
                 "lr1" to zone5_report_lp1.isChecked,
                 "lr2" to zone5_report_lp2.isChecked,
@@ -78,10 +113,10 @@ class  RaportZone5Fragment : BaseFragment() {
         data.put("control",control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
         data.put("name", "zewnątrz obiektu – w okresie od 15 X do 15 IV")
-        data.put("zone", "Strefa 5")
+        data.put("zone", "Strefa 5 - okres zimowy")
         data.put("date", Timestamp(Date()))
         data.put("cid", "NBP")
-
+        if (raport == null) {
                     cloud.collection("raports")
                        .add(data)
 
@@ -99,8 +134,31 @@ class  RaportZone5Fragment : BaseFragment() {
             Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                 .show()
                }
+        else
+        {
 
-           }
-   // }
+            raport.documentId?.let {
+                cloud.collection("raports")
+                    .document(it)
+                    .set(data)
+                    .addOnSuccessListener {
+                        // Log.d(REPO_DEBUG, "Dodana do ulubionych")
+                    }
+                    .addOnFailureListener{
+                        //  Log.d(REPO_DEBUG, it.message.toString())
+                    }
+            }
 
 
+            findNavController()
+                .navigate(RaportZone5FragmentDirections.actionRaportFragmentz5ToHomeFragment().actionId)
+            Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
+                .show()
+
+        }
+
+
+    }
+
+
+}

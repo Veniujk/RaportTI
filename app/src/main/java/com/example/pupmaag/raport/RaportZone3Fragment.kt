@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
+import com.example.pupmaag.data.Raport
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
@@ -40,7 +42,7 @@ class  RaportZone3Fragment : BaseFragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.send_action -> {
-                openReportZone3Click()
+                openReportZone3Click(arguments?.get("raport"))
                 // requireActivity().finish()
             }
         }
@@ -48,7 +50,7 @@ class  RaportZone3Fragment : BaseFragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        openReportZone3Click()
+
         val rooms = arrayOf("Zespoły specjalnych pomieszczeń magazynowych",
                             "Hole rozładunkowe",
                             "Sortowanie",
@@ -57,17 +59,59 @@ class  RaportZone3Fragment : BaseFragment() {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         zone3_name_spinner.adapter = arrayAdapter
+
+        val arguementRaport = arguments?.get("raport")
+
+        if (arguementRaport != null) {
+            editReportZoneClick(arguementRaport as Raport)
+        }
+
+    }
+    private fun getIndex(spinner: Spinner, myString: String): Int {
+        for (i in 0 until spinner.count) {
+
+            if (spinner.getItemAtPosition(i).toString().equals(myString, ignoreCase = true)) {
+
+                return i
+            }
+        }
+        return 0
     }
 
-    private fun openReportZone3Click() {
+    private fun editReportZoneClick(raport: Raport) {
+        raport.name?.let { getIndex(zone3_name_spinner, it) }?.let {
+            zone3_name_spinner.setSelection(it)
+        }
+        raport.lr1?.let { zone3_report_lp1.setChecked(it) }
+        raport.lr2?.let { zone3_report_lp2.setChecked(it) }
+        raport.lr3?.let { zone3_report_lp3.setChecked(it) }
+        raport.lr4?.let { zone3_report_lp4.setChecked(it) }
+        raport.lr5?.let { zone3_report_lp5.setChecked(it) }
+        raport.lr6?.let { zone3_report_lp6.setChecked(it) }
+        raport.lr7?.let { zone3_report_lp7.setChecked(it) }
+        raport.lr8?.let { zone3_report_lp8.setChecked(it) }
+        raport.lr9?.let { zone3_report_lp9.setChecked(it) }
+        raport.lr10?.let { zone3_report_lp10.setChecked(it) }
+        raport.lr11?.let { zone3_report_lp11.setChecked(it) }
+        raport.lr12?.let { zone3_report_lp12.setChecked(it) }
+        raport.lr13?.let { zone3_report_lp13.setChecked(it) }
+        raport.lr14?.let { zone3_report_lp14.setChecked(it) }
+        raport.lr15?.let { zone3_report_lp15.setChecked(it) }
+        raport.lr16?.let { zone3_report_lp16.setChecked(it) }
+        raport.lr21?.let { zone3_report_lp21.setChecked(it) }
+        raport.lr22?.let { zone3_report_lp22.setChecked(it) }
+        raport.lr23?.let { zone3_report_lp23.setChecked(it) }
 
-      //  zone3_report_send.setOnClickListener {
+    }
+
+
+    private fun openReportZone3Click(argumentRaport: Any?) {
+
+      var raport : Raport? = null
+        if (argumentRaport != null) {
+            raport = (argumentRaport as Raport)
+        }
            val data = hashMapOf<Any,Any>(
-               /* "cid" to "NBP",
-                "uid" to auth.currentUser?.uid,
-                "zone" to "Strefa 3",
-                "date" to Timestamp(Date()),
-                "name" to zone3_name_spinner.selectedItem,*/
                 "lr1" to zone3_report_lp1.isChecked,
                 "lr2" to zone3_report_lp2.isChecked,
                 "lr3" to zone3_report_lp3.isChecked,
@@ -98,9 +142,9 @@ class  RaportZone3Fragment : BaseFragment() {
         data.put("date", Timestamp(Date()))
         data.put("cid", "NBP")
 
+                if (raport == null) {
                    cloud.collection("raports")
                        .add(data)
-
                        .addOnSuccessListener { documentReference ->
                            Log.d(
                                ContentValues.TAG,
@@ -115,8 +159,29 @@ class  RaportZone3Fragment : BaseFragment() {
             Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                 .show()
                }
+                else
+                {
 
+                    raport.documentId?.let {
+                        cloud.collection("raports")
+                            .document(it)
+                            .set(data)
+                            .addOnSuccessListener {
+                                // Log.d(REPO_DEBUG, "Dodana do ulubionych")
+                            }
+                            .addOnFailureListener{
+                                //  Log.d(REPO_DEBUG, it.message.toString())
+                            }
+                    }
+
+
+                    findNavController()
+                        .navigate(RaportZone3FragmentDirections.actionRaportFragmentz3ToHomeFragment().actionId)
+                    Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
+                        .show()
+
+                }
            }
- //   }
+    }
 
 

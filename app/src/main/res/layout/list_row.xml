@@ -18,14 +18,14 @@
 
         <TextView
             android:id="@+id/roomName"
-            android:layout_width="406dp"
+            android:layout_width="464dp"
             android:layout_height="35dp"
             android:layout_marginTop="20dp"
             android:text="@string/row_name"
             android:textColor="@color/light_black"
             android:textSize="@dimen/tv_profile_page_text_size"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +43,7 @@
 
         <TextView
             android:id="@+id/raportZone"
-            android:layout_width="131dp"
+            android:layout_width="229dp"
             android:layout_height="20dp"
             android:text="@string/row_zone"
             android:textColor="@color/light_black"

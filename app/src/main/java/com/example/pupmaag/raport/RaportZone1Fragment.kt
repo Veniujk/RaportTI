@@ -44,7 +44,7 @@ class RaportZone1Fragment : BaseFragment() {
         when (item.itemId) {
             R.id.send_action -> {
                 openReportZone1Click(arguments?.get("raport"))
-                 requireActivity().finish()
+               //  requireActivity().finish()
             }
         }
         return false
@@ -52,9 +52,6 @@ class RaportZone1Fragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-        Log.d("cos", arguments?.get("raport").toString())
 
         val rooms = arrayOf(
             "Zespoły sekretarsko-dyrektorskie",
@@ -89,9 +86,7 @@ class RaportZone1Fragment : BaseFragment() {
 
     private fun editReportZoneClick(raport: Raport) {
         raport.name?.let { getIndex(zone1_name_spinner, it) }?.let {
-            zone1_name_spinner.setSelection(
-                it
-            )
+            zone1_name_spinner.setSelection(it)
         }
         raport.lr1?.let { zone1_report_lp1.setChecked(it) }
         raport.lr2?.let { zone1_report_lp2.setChecked(it) }
@@ -158,12 +153,14 @@ class RaportZone1Fragment : BaseFragment() {
             cloud.collection("raports")
                 .add(data)
                 .addOnSuccessListener { documentReference ->
+                    Log.d(
+                        ContentValues.TAG,
+                        "DocumentSnapshot written with ID: ${documentReference.id}"
+                    )
                 }
                 .addOnFailureListener { e ->
                     Log.w(ContentValues.TAG, "Error adding document", e)
                 }
-
-
 
             findNavController()
                 .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
@@ -188,7 +185,7 @@ class RaportZone1Fragment : BaseFragment() {
 
             findNavController()
                 .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
-            Snackbar.make(requireView(), "Zedytowano raport!", Snackbar.LENGTH_SHORT)
+            Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
                 .show()
 
         }
@@ -200,7 +197,7 @@ class RaportZone1Fragment : BaseFragment() {
 }
 
 
-          // }
+
 
 
 
