@@ -20,14 +20,10 @@ class RaportAdapter(private val listener: OnRaportItemLongClick) :
         notifyDataSetChanged()
     }
 
-    fun removeCar(raport: Raport, position: Int){
-        raportsList.remove(raport)
-        notifyItemRemoved(position)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RaportViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.list_row, parent, false)
+       // val view5 = inflater.inflate(R.layout.list_date, parent, false)
         return RaportViewHolder(view)
     }
 
@@ -42,7 +38,8 @@ class RaportAdapter(private val listener: OnRaportItemLongClick) :
         val control = holder.itemView.findViewById<TextView>(R.id.raportControl)
         name.text = raportsList[holder.adapterPosition].name
         zone.text = raportsList[holder.adapterPosition].zone
-        data.text = SimpleDateFormat("dd/MM/yyyy HH:mm").format(raportsList[holder.adapterPosition].date?.toDate())
+       data.text = SimpleDateFormat("dd/MM/yyyy HH:mm").format(raportsList[holder.adapterPosition].date?.toDate())
+       // data.text = SimpleDateFormat("dd/MM/yyyy").format(raportsList[holder.adapterPosition].date?.toDate())
         control.text = "Wynik kontroli: " + raportsList[holder.adapterPosition].control + "%"
 
        }
