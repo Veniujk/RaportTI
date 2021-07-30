@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import kotlinx.android.synthetic.main.fragment_raport_zone3.*
+import kotlinx.android.synthetic.main.fragment_raport_zone4.*
 import kotlinx.android.synthetic.main.fragment_raport_zone5.*
 import java.util.*
 
@@ -87,6 +88,20 @@ class  RaportZone5Fragment : BaseFragment() {
         raport.lr24?.let { zone5_report_lp24.setChecked(it) }
         raport.lr25?.let { zone5_report_lp25.setChecked(it) }
         raport.lr26?.let { zone5_report_lp26.setChecked(it) }
+        if (raport.uid != auth.currentUser?.uid) {
+            zone5_report_lp1.setEnabled(false)
+            zone5_report_lp2.setEnabled(false)
+            zone5_report_lp3.setEnabled(false)
+            zone5_report_lp4.setEnabled(false)
+            zone5_report_lp5.setEnabled(false)
+            zone5_report_lp6.setEnabled(false)
+            zone5_report_lp21.setEnabled(false)
+            zone5_report_lp22.setEnabled(false)
+            zone5_report_lp23.setEnabled(false)
+            zone5_report_lp24.setEnabled(false)
+            zone5_report_lp25.setEnabled(false)
+            zone5_report_lp26.setEnabled(false)
+        }
 
     }
 
@@ -112,7 +127,7 @@ class  RaportZone5Fragment : BaseFragment() {
                )
         data.put("control",control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
-        data.put("name", "zewnątrz obiektu – w okresie od 15 X do 15 IV")
+        data.put("name", "Zewnątrz obiektu – w okresie 15X- 15IV")
         data.put("zone", "Strefa 5 - okres zimowy")
         data.put("date", Timestamp(Date()))
         data.put("cid", "NBP")

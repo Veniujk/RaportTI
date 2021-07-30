@@ -110,6 +110,30 @@ class RaportZone1Fragment : BaseFragment() {
         raport.lr22?.let { zone1_report_lp22.setChecked(it) }
         raport.lr23?.let { zone1_report_lp23.setChecked(it) }
 
+        if (raport.uid != auth.currentUser?.uid) {
+            zone1_name_spinner.setEnabled(false)
+            zone1_report_lp1.setEnabled(false)
+            zone1_report_lp2.setEnabled(false)
+            zone1_report_lp3.setEnabled(false)
+            zone1_report_lp4.setEnabled(false)
+            zone1_report_lp5.setEnabled(false)
+            zone1_report_lp6.setEnabled(false)
+            zone1_report_lp7.setEnabled(false)
+            zone1_report_lp8.setEnabled(false)
+            zone1_report_lp9.setEnabled(false)
+            zone1_report_lp10.setEnabled(false)
+            zone1_report_lp11.setEnabled(false)
+            zone1_report_lp12.setEnabled(false)
+            zone1_report_lp13.setEnabled(false)
+            zone1_report_lp14.setEnabled(false)
+            zone1_report_lp15.setEnabled(false)
+            zone1_report_lp16.setEnabled(false)
+            zone1_report_lp17.setEnabled(false)
+            zone1_report_lp18.setEnabled(false)
+            zone1_report_lp21.setEnabled(false)
+            zone1_report_lp22.setEnabled(false)
+            zone1_report_lp23.setEnabled(false)
+        }
     }
 
     private fun openReportZone1Click(argumentRaport: Any?) {
@@ -183,7 +207,7 @@ class RaportZone1Fragment : BaseFragment() {
             }
 
 
-            findNavController()
+           findNavController()
                 .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
             Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
                 .show()

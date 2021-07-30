@@ -98,7 +98,28 @@ class  RaportZone6Fragment : BaseFragment() {
         raport.lr26?.let { zone6_report_lp26.setChecked(it) }
         raport.lr27?.let { zone6_report_lp25.setChecked(it) }
         raport.lr28?.let { zone6_report_lp26.setChecked(it) }
-
+        if (raport.uid != auth.currentUser?.uid) {
+            zone6_report_lp1.setEnabled(false)
+            zone6_report_lp2.setEnabled(false)
+            zone6_report_lp3.setEnabled(false)
+            zone6_report_lp4.setEnabled(false)
+            zone6_report_lp5.setEnabled(false)
+            zone6_report_lp6.setEnabled(false)
+            zone6_report_lp7.setEnabled(false)
+            zone6_report_lp8.setEnabled(false)
+            zone6_report_lp9a.setEnabled(false)
+            zone6_report_lp9b.setEnabled(false)
+            zone6_report_lp9c.setEnabled(false)
+            zone6_report_lp9d.setEnabled(false)
+            zone6_report_lp21.setEnabled(false)
+            zone6_report_lp22.setEnabled(false)
+            zone6_report_lp23.setEnabled(false)
+            zone6_report_lp24.setEnabled(false)
+            zone6_report_lp25.setEnabled(false)
+            zone6_report_lp26.setEnabled(false)
+            zone6_report_lp27.setEnabled(false)
+            zone6_report_lp28.setEnabled(false)
+        }
     }
 
 
@@ -132,7 +153,7 @@ class  RaportZone6Fragment : BaseFragment() {
                  )
         data.put("control",control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
-        data.put("name", "zewnątrz obiektu – w okresie od 16 IV do 14 x")
+        data.put("name", "zewnątrz obiektu – w okresie 16IV - 14X")
         data.put("zone", "Strefa 5 - okres letni")
         data.put("date", Timestamp(Date()))
         data.put("cid", "NBP")

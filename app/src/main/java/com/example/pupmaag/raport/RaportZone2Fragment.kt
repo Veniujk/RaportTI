@@ -106,6 +106,30 @@ private fun editReportZoneClick(raport: Raport) {
     raport.lr24?.let { zone2_report_lp22.setChecked(it) }
     raport.lr25?.let { zone2_report_lp23.setChecked(it) }
 
+    if (raport.uid != auth.currentUser?.uid) {
+        zone2_name_spinner.setEnabled(false)
+        zone2_report_lp1.setEnabled(false)
+        zone2_report_lp2.setEnabled(false)
+        zone2_report_lp3.setEnabled(false)
+        zone2_report_lp4.setEnabled(false)
+        zone2_report_lp5.setEnabled(false)
+        zone2_report_lp6.setEnabled(false)
+        zone2_report_lp7.setEnabled(false)
+        zone2_report_lp8.setEnabled(false)
+        zone2_report_lp9.setEnabled(false)
+        zone2_report_lp10.setEnabled(false)
+        zone2_report_lp11.setEnabled(false)
+        zone2_report_lp12.setEnabled(false)
+        zone2_report_lp13.setEnabled(false)
+        zone2_report_lp14.setEnabled(false)
+        zone2_report_lp15.setEnabled(false)
+        zone2_report_lp21.setEnabled(false)
+        zone2_report_lp22.setEnabled(false)
+        zone2_report_lp23.setEnabled(false)
+        zone2_report_lp24.setEnabled(false)
+        zone2_report_lp25.setEnabled(false)
+
+    }
 }
 
     private fun openReportZone2Click(argumentRaport: Any?) {

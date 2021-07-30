@@ -101,10 +101,38 @@ class  RaportZone4Fragment : BaseFragment() {
         raport.lr13?.let { zone4_report_lp13.setChecked(it) }
         raport.lr14?.let { zone4_report_lp14.setChecked(it) }
         raport.lr15?.let { zone4_report_lp15.setChecked(it) }
+        raport.lr15?.let { zone4_report_lp16.setChecked(it) }
         raport.lr21?.let { zone4_report_lp21.setChecked(it) }
         raport.lr22?.let { zone4_report_lp22.setChecked(it) }
         raport.lr23?.let { zone4_report_lp23.setChecked(it) }
-
+        raport.lr24?.let { zone4_report_lp24.setChecked(it) }
+        raport.lr25?.let { zone4_report_lp25.setChecked(it) }
+        raport.lr26?.let { zone4_report_lp26.setChecked(it) }
+        if (raport.uid != auth.currentUser?.uid) {
+            zone4_name_spinner.setEnabled(false)
+            zone4_report_lp1.setEnabled(false)
+            zone4_report_lp2.setEnabled(false)
+            zone4_report_lp3.setEnabled(false)
+            zone4_report_lp4.setEnabled(false)
+            zone4_report_lp5.setEnabled(false)
+            zone4_report_lp6.setEnabled(false)
+            zone4_report_lp7.setEnabled(false)
+            zone4_report_lp8.setEnabled(false)
+            zone4_report_lp9.setEnabled(false)
+            zone4_report_lp10.setEnabled(false)
+            zone4_report_lp11.setEnabled(false)
+            zone4_report_lp12.setEnabled(false)
+            zone4_report_lp13.setEnabled(false)
+            zone4_report_lp14.setEnabled(false)
+            zone4_report_lp15.setEnabled(false)
+            zone4_report_lp16.setEnabled(false)
+            zone4_report_lp21.setEnabled(false)
+            zone4_report_lp22.setEnabled(false)
+            zone4_report_lp23.setEnabled(false)
+            zone4_report_lp24.setEnabled(false)
+            zone4_report_lp25.setEnabled(false)
+            zone4_report_lp26.setEnabled(false)
+        }
     }
 
     private fun openReportZone4Click(argumentRaport: Any?) {
@@ -129,6 +157,7 @@ class  RaportZone4Fragment : BaseFragment() {
                 "lr13" to zone4_report_lp13.isChecked,
                 "lr14" to zone4_report_lp14.isChecked,
                 "lr15" to zone4_report_lp15.isChecked,
+                "lr16" to zone4_report_lp16.isChecked,
                 "lr21" to zone4_report_lp21.isChecked, //okresowo dlatego start od 20
                 "lr22" to zone4_report_lp22.isChecked,//okresowo dlatego start od 20
                 "lr23" to zone4_report_lp23.isChecked,//okresowo dlatego start od 20

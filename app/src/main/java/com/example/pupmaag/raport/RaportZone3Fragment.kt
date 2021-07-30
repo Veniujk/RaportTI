@@ -15,6 +15,7 @@ import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
+import kotlinx.android.synthetic.main.fragment_raport_zone2.*
 import kotlinx.android.synthetic.main.fragment_raport_zone3.*
 import java.util.*
 
@@ -101,7 +102,32 @@ class  RaportZone3Fragment : BaseFragment() {
         raport.lr21?.let { zone3_report_lp21.setChecked(it) }
         raport.lr22?.let { zone3_report_lp22.setChecked(it) }
         raport.lr23?.let { zone3_report_lp23.setChecked(it) }
-
+        raport.lr24?.let { zone3_report_lp24.setChecked(it) }
+        raport.lr25?.let { zone3_report_lp25.setChecked(it) }
+        if (raport.uid != auth.currentUser?.uid) {
+            zone3_name_spinner.setEnabled(false)
+            zone3_report_lp1.setEnabled(false)
+            zone3_report_lp2.setEnabled(false)
+            zone3_report_lp3.setEnabled(false)
+            zone3_report_lp4.setEnabled(false)
+            zone3_report_lp5.setEnabled(false)
+            zone3_report_lp6.setEnabled(false)
+            zone3_report_lp7.setEnabled(false)
+            zone3_report_lp8.setEnabled(false)
+            zone3_report_lp9.setEnabled(false)
+            zone3_report_lp10.setEnabled(false)
+            zone3_report_lp11.setEnabled(false)
+            zone3_report_lp12.setEnabled(false)
+            zone3_report_lp13.setEnabled(false)
+            zone3_report_lp14.setEnabled(false)
+            zone3_report_lp15.setEnabled(false)
+            zone3_report_lp16.setEnabled(false)
+            zone3_report_lp21.setEnabled(false)
+            zone3_report_lp22.setEnabled(false)
+            zone3_report_lp23.setEnabled(false)
+            zone3_report_lp24.setEnabled(false)
+            zone3_report_lp25.setEnabled(false)
+        }
     }
 
 
