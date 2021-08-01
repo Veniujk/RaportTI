@@ -1,5 +1,6 @@
 package com.example.pupmaag.repository
 
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -74,6 +75,7 @@ class FirebaseRepository {
 
         return cloudResult
     }
+
     fun getRaports(): LiveData<List<Raport>>{
         val cloudResult = MutableLiveData<List<Raport>>()
 

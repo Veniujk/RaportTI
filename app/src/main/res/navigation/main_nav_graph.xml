@@ -34,20 +34,23 @@
             android:id="@+id/action_homeFragment_to_raportFragmentz6"
             app:destination="@id/raportFragmentz6" />
         <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz22"
-            app:destination="@id/raportFragmentz2" />
+            android:id="@+id/action_homeFragment_to_raportZone1ShortFragment"
+            app:destination="@id/raportZone1ShortFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz12"
-            app:destination="@id/raportFragmentz1" />
+            android:id="@+id/action_homeFragment_to_raportZone2ShortFragment"
+            app:destination="@id/raportZone2ShortFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz62"
-            app:destination="@id/raportFragmentz6" />
+            android:id="@+id/action_homeFragment_to_raportZone3ShortFragment"
+            app:destination="@id/raportZone3ShortFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz52"
-            app:destination="@id/raportFragmentz5" />
+            android:id="@+id/action_homeFragment_to_raportZone4ShortFragment"
+            app:destination="@id/raportZone4ShortFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz32"
-            app:destination="@id/raportFragmentz3" />
+            android:id="@+id/action_homeFragment_to_raportZone5ShortFragment"
+            app:destination="@id/raportZone5ShortFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_raportZone6ShortFragment"
+            app:destination="@id/raportZone6ShortFragment" />
     </fragment>
     <fragment
         tools:layout="@layout/fragment_raport"
@@ -72,6 +75,24 @@
         <action
             android:id="@+id/action_raportFragment_to_raportFragmentz6"
             app:destination="@id/raportFragmentz6" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportZone1ShortFragment"
+            app:destination="@id/raportZone1ShortFragment" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportZone2ShortFragment"
+            app:destination="@id/raportZone2ShortFragment" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportZone3ShortFragment"
+            app:destination="@id/raportZone3ShortFragment" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportZone4ShortFragment"
+            app:destination="@id/raportZone4ShortFragment" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportZone5ShortFragment"
+            app:destination="@id/raportZone5ShortFragment" />
+        <action
+            android:id="@+id/action_raportFragment_to_raportZone6ShortFragment"
+            app:destination="@id/raportZone6ShortFragment" />
     </fragment>
 
 
@@ -98,6 +119,24 @@
         <action
             android:id="@+id/action_profileFragment_to_raportFragmentz6"
             app:destination="@id/raportFragmentz6" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportZone1ShortFragment"
+            app:destination="@id/raportZone1ShortFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportZone2ShortFragment"
+            app:destination="@id/raportZone2ShortFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportZone3ShortFragment"
+            app:destination="@id/raportZone3ShortFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportZone4ShortFragment"
+            app:destination="@id/raportZone4ShortFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportZone5ShortFragment"
+            app:destination="@id/raportZone5ShortFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_raportZone6ShortFragment"
+            app:destination="@id/raportZone6ShortFragment" />
     </fragment>
 
     <fragment
@@ -159,6 +198,54 @@
         tools:layout="@layout/fragment_raport_zone6">
         <action
             android:id="@+id/action_raportFragmentz6_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raportZone1ShortFragment"
+        android:name="com.example.pupmaag.raport.RaportZone1ShortFragment"
+        android:label="Strefa I">
+        <action
+            android:id="@+id/action_raportZone1ShortFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raportZone2ShortFragment"
+        android:name="com.example.pupmaag.raport.RaportZone2ShortFragment"
+        android:label="Strefa II">
+        <action
+            android:id="@+id/action_raportZone2ShortFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raportZone3ShortFragment"
+        android:name="com.example.pupmaag.raport.RaportZone3ShortFragment"
+        android:label="Strefa III">
+        <action
+            android:id="@+id/action_raportZone3ShortFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raportZone4ShortFragment"
+        android:name="com.example.pupmaag.raport.RaportZone4ShortFragment"
+        android:label="Strefa IV">
+        <action
+            android:id="@+id/action_raportZone4ShortFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raportZone5ShortFragment"
+        android:name="com.example.pupmaag.raport.RaportZone5ShortFragment"
+        android:label="Strefa V - okres zimowy">
+        <action
+            android:id="@+id/action_raportZone5ShortFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raportZone6ShortFragment"
+        android:name="com.example.pupmaag.raport.RaportZone6ShortFragment"
+        android:label="Strefa V - okres letni">
+        <action
+            android:id="@+id/action_raportZone6ShortFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

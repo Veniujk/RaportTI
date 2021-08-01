@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import kotlinx.android.synthetic.main.fragment_raport_zone2.*
 import java.util.*
 
-class  RaportZone2Fragment : BaseFragment() {
+class  RaportZone2ShortFragment : BaseFragment() {
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class  RaportZone2Fragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_raport_zone2, container, false)
+        return inflater.inflate(R.layout.fragment_raport_zone2_short, container, false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -100,11 +100,6 @@ private fun editReportZoneClick(raport: Raport) {
     raport.lr13?.let { zone2_report_lp13.setChecked(it) }
     raport.lr14?.let { zone2_report_lp14.setChecked(it) }
     raport.lr15?.let { zone2_report_lp15.setChecked(it) }
-    raport.lr21?.let { zone2_report_lp21.setChecked(it) }
-    raport.lr22?.let { zone2_report_lp22.setChecked(it) }
-    raport.lr23?.let { zone2_report_lp23.setChecked(it) }
-    raport.lr24?.let { zone2_report_lp22.setChecked(it) }
-    raport.lr25?.let { zone2_report_lp23.setChecked(it) }
 
     if (raport.uid != auth.currentUser?.uid) {
         zone2_name_spinner.setEnabled(false)
@@ -123,11 +118,6 @@ private fun editReportZoneClick(raport: Raport) {
         zone2_report_lp13.setEnabled(false)
         zone2_report_lp14.setEnabled(false)
         zone2_report_lp15.setEnabled(false)
-        zone2_report_lp21.setEnabled(false)
-        zone2_report_lp22.setEnabled(false)
-        zone2_report_lp23.setEnabled(false)
-        zone2_report_lp24.setEnabled(false)
-        zone2_report_lp25.setEnabled(false)
 
     }
 }
@@ -153,17 +143,12 @@ private fun editReportZoneClick(raport: Raport) {
                 "lr13" to zone2_report_lp13.isChecked,
                 "lr14" to zone2_report_lp14.isChecked,
                 "lr15" to zone2_report_lp15.isChecked,
-                "lr21" to zone2_report_lp21.isChecked, //okresowo dlatego start od 20
-                "lr22" to zone2_report_lp22.isChecked,//okresowo dlatego start od 20
-                "lr23" to zone2_report_lp23.isChecked,//okresowo dlatego start od 20
-                "lr24" to zone2_report_lp24.isChecked, //okresowo dlatego start od 20
-                "lr25" to zone2_report_lp25.isChecked,//okresowo dlatego start od 20
 
                )
             data.put("control",control(data).toString())
             auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
             data.put("name", zone2_name_spinner.selectedItem)
-            data.put("zone", "Strefa 2 - okresowo")
+            data.put("zone", "Strefa 2")
             data.put("date", Timestamp(Date()))
             data.put("cid", "NBP")
             if (raport == null) {
@@ -180,7 +165,7 @@ private fun editReportZoneClick(raport: Raport) {
 
                        }
             findNavController()
-                .navigate(RaportZone2FragmentDirections.actionRaportFragmentz2ToHomeFragment().actionId)
+                .navigate(RaportZone2ShortFragmentDirections.actionRaportZone2ShortFragmentToHomeFragment().actionId)
             Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                 .show()
                }
@@ -201,7 +186,7 @@ private fun editReportZoneClick(raport: Raport) {
 
 
                 findNavController()
-                    .navigate(RaportZone2FragmentDirections.actionRaportFragmentz2ToHomeFragment().actionId)
+                    .navigate(RaportZone2ShortFragmentDirections.actionRaportZone2ShortFragmentToHomeFragment().actionId)
                 Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
                     .show()
 

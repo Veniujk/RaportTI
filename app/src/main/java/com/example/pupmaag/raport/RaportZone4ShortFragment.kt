@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_raport_zone3.*
 import kotlinx.android.synthetic.main.fragment_raport_zone4.*
 import java.util.*
 
-class  RaportZone4Fragment : BaseFragment() {
+class  RaportZone4ShortFragment : BaseFragment() {
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +32,7 @@ class  RaportZone4Fragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_raport_zone4, container, false)
+        return inflater.inflate(R.layout.fragment_raport_zone4_short, container, false)
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.send_menu, menu)
@@ -102,12 +102,7 @@ class  RaportZone4Fragment : BaseFragment() {
         raport.lr14?.let { zone4_report_lp14.setChecked(it) }
         raport.lr15?.let { zone4_report_lp15.setChecked(it) }
         raport.lr15?.let { zone4_report_lp16.setChecked(it) }
-        raport.lr21?.let { zone4_report_lp21.setChecked(it) }
-        raport.lr22?.let { zone4_report_lp22.setChecked(it) }
-        raport.lr23?.let { zone4_report_lp23.setChecked(it) }
-        raport.lr24?.let { zone4_report_lp24.setChecked(it) }
-        raport.lr25?.let { zone4_report_lp25.setChecked(it) }
-        raport.lr26?.let { zone4_report_lp26.setChecked(it) }
+
         if (raport.uid != auth.currentUser?.uid) {
             zone4_name_spinner.setEnabled(false)
             zone4_report_lp1.setEnabled(false)
@@ -126,12 +121,6 @@ class  RaportZone4Fragment : BaseFragment() {
             zone4_report_lp14.setEnabled(false)
             zone4_report_lp15.setEnabled(false)
             zone4_report_lp16.setEnabled(false)
-            zone4_report_lp21.setEnabled(false)
-            zone4_report_lp22.setEnabled(false)
-            zone4_report_lp23.setEnabled(false)
-            zone4_report_lp24.setEnabled(false)
-            zone4_report_lp25.setEnabled(false)
-            zone4_report_lp26.setEnabled(false)
         }
     }
 
@@ -158,19 +147,13 @@ class  RaportZone4Fragment : BaseFragment() {
                 "lr14" to zone4_report_lp14.isChecked,
                 "lr15" to zone4_report_lp15.isChecked,
                 "lr16" to zone4_report_lp16.isChecked,
-                "lr21" to zone4_report_lp21.isChecked, //okresowo dlatego start od 20
-                "lr22" to zone4_report_lp22.isChecked,//okresowo dlatego start od 20
-                "lr23" to zone4_report_lp23.isChecked,//okresowo dlatego start od 20
-                "lr24" to zone4_report_lp24.isChecked, //okresowo dlatego start od 20
-                "lr25" to zone4_report_lp25.isChecked,//okresowo dlatego start od 20
-                "lr26" to zone4_report_lp26.isChecked,//okresowo dlatego start od 20
 
                )
 
             data.put("control",control(data).toString())
             auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
             data.put("name", zone4_name_spinner.selectedItem)
-            data.put("zone", "Strefa 4 - okresowo")
+            data.put("zone", "Strefa 4")
             data.put("date", Timestamp(Date()))
             data.put("cid", "NBP")
                  if (raport == null) {
@@ -187,7 +170,7 @@ class  RaportZone4Fragment : BaseFragment() {
                            Log.w(ContentValues.TAG, "Error adding document", e)
                        }
             findNavController()
-                .navigate(RaportZone4FragmentDirections.actionRaportFragmentz4ToHomeFragment().actionId)
+                .navigate(RaportZone4ShortFragmentDirections.actionRaportZone4ShortFragmentToHomeFragment().actionId)
             Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                 .show()
                }
@@ -208,7 +191,7 @@ class  RaportZone4Fragment : BaseFragment() {
 
 
                      findNavController()
-                         .navigate(RaportZone4FragmentDirections.actionRaportFragmentz4ToHomeFragment().actionId)
+                         .navigate(RaportZone4ShortFragmentDirections.actionRaportZone4ShortFragmentToHomeFragment().actionId)
                      Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
                          .show()
 

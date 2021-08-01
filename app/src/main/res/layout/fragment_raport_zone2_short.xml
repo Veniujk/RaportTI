@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/zone2_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:text="Wybierz kontrolowane pomieszczenie: " />
+        <com.example.pupmaag.data.MySpinner
+            android:id="@+id/zone2_name_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <CheckBox
+            android:id="@+id/zone2_report_lp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Podłogi - odkurzone, umyte, wolne od brudu, smug i śladów butów." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Dywany, wykładziny podłogowe, chodniki -wolne od kurzu, śmieci i plam." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Ściany - wolne od zabrudzeń, kurzu, smug i pajęczyn." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sufity - wolne od pajęczyn." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Drzwi, przeszklenia - wolne od kurzu, smug i śladów palców." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Lustra - wolne od kurzu, zabrudzeń, smug i śladów palców." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Meble wolnostojące i zabudowy - wolne od kurzu, zabrudzeń smug i śladów palców." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Meble tapicerowane, fotele tapicerowane, krzesła drewniane i tapicerowane - wolne od kurzu i plam." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sprzęt RTV, elektroniczny, teleinformatyczny, biurowy- w tym lampy, AGD – z zewnątrz - wolne od kurzu i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Kosze	wolne od śmieci, plam, zabrudzeń, wymagane nowe worki." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Gniazda, włączniki - wolne od kurzu, zabrudzeń i smug." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Parapety - wolne od kurzu, plam, śmieci i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Maszyny i urządzenia specjalistyczne - wolne od kurzu i zabrudzeń." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Meble kuchenne	wolne od kurzu, smug i śladów palców." />
+
+        <CheckBox
+            android:id="@+id/zone2_report_lp15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Zlewy, umywalki, baterie, muszle, pisuary - wolne od osadów, smug i pleśni." />
+        <!--
+                <Button
+                    android:id="@+id/zone2_report_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Wyślij Raport" />
+        -->
+
+            </LinearLayout>
+        </ScrollView>

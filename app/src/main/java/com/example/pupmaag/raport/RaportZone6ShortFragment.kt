@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_raport_zone5.*
 import kotlinx.android.synthetic.main.fragment_raport_zone6.*
 import java.util.*
 
-class  RaportZone6Fragment : BaseFragment() {
+class  RaportZone6ShortFragment : BaseFragment() {
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class  RaportZone6Fragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_raport_zone6, container, false)
+        return inflater.inflate(R.layout.fragment_raport_zone6_short, container, false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -90,14 +90,6 @@ class  RaportZone6Fragment : BaseFragment() {
         raport.lr9b?.let { zone6_report_lp9b.setChecked(it) }
         raport.lr9c?.let { zone6_report_lp9c.setChecked(it) }
         raport.lr9d?.let { zone6_report_lp9d.setChecked(it) }
-        raport.lr21?.let { zone6_report_lp21.setChecked(it) }
-        raport.lr22?.let { zone6_report_lp22.setChecked(it) }
-        raport.lr23?.let { zone6_report_lp23.setChecked(it) }
-        raport.lr24?.let { zone6_report_lp24.setChecked(it) }
-        raport.lr25?.let { zone6_report_lp25.setChecked(it) }
-        raport.lr26?.let { zone6_report_lp26.setChecked(it) }
-        raport.lr27?.let { zone6_report_lp25.setChecked(it) }
-        raport.lr28?.let { zone6_report_lp26.setChecked(it) }
         if (raport.uid != auth.currentUser?.uid) {
             zone6_report_lp1.setEnabled(false)
             zone6_report_lp2.setEnabled(false)
@@ -111,14 +103,6 @@ class  RaportZone6Fragment : BaseFragment() {
             zone6_report_lp9b.setEnabled(false)
             zone6_report_lp9c.setEnabled(false)
             zone6_report_lp9d.setEnabled(false)
-            zone6_report_lp21.setEnabled(false)
-            zone6_report_lp22.setEnabled(false)
-            zone6_report_lp23.setEnabled(false)
-            zone6_report_lp24.setEnabled(false)
-            zone6_report_lp25.setEnabled(false)
-            zone6_report_lp26.setEnabled(false)
-            zone6_report_lp27.setEnabled(false)
-            zone6_report_lp28.setEnabled(false)
         }
     }
 
@@ -142,19 +126,11 @@ class  RaportZone6Fragment : BaseFragment() {
                 "lr9b" to zone6_report_lp9b.isChecked,
                 "lr9c" to zone6_report_lp9c.isChecked,
                 "lr9d" to zone6_report_lp9d.isChecked,
-                "lr21" to zone6_report_lp21.isChecked,
-                "lr22" to zone6_report_lp22.isChecked,
-                "lr23" to zone6_report_lp23.isChecked,
-                "lr24" to zone6_report_lp24.isChecked,
-                "lr25" to zone6_report_lp25.isChecked,
-                "lr26" to zone6_report_lp26.isChecked,
-                "lr27" to zone6_report_lp27.isChecked,
-                "lr28" to zone6_report_lp28.isChecked,
                  )
         data.put("control",control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
         data.put("name", "zewnątrz obiektu – w okresie 16IV - 14X")
-        data.put("zone", "Strefa 5 - okres letni - okresowo")
+        data.put("zone", "Strefa 5 - okres letni")
         data.put("date", Timestamp(Date()))
         data.put("cid", "NBP")
             if (raport == null) {
@@ -171,7 +147,7 @@ class  RaportZone6Fragment : BaseFragment() {
                            Log.w(ContentValues.TAG, "Error adding document", e)
                        }
                    findNavController()
-                       .navigate(RaportZone6FragmentDirections.actionRaportFragmentz6ToHomeFragment().actionId)
+                       .navigate(RaportZone6ShortFragmentDirections.actionRaportZone6ShortFragmentToHomeFragment().actionId)
                    Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                        .show()
                }
@@ -192,7 +168,7 @@ class  RaportZone6Fragment : BaseFragment() {
 
 
                 findNavController()
-                    .navigate(RaportZone6FragmentDirections.actionRaportFragmentz6ToHomeFragment().actionId)
+                    .navigate(RaportZone6ShortFragmentDirections.actionRaportZone6ShortFragmentToHomeFragment().actionId)
                 Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
                     .show()
 

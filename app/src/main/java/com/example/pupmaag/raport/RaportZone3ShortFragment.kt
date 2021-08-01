@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_raport_zone2.*
 import kotlinx.android.synthetic.main.fragment_raport_zone3.*
 import java.util.*
 
-class  RaportZone3Fragment : BaseFragment() {
+class  RaportZone3ShortFragment : BaseFragment() {
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +32,7 @@ class  RaportZone3Fragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_raport_zone3, container, false)
+        return inflater.inflate(R.layout.fragment_raport_zone3_short, container, false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -99,11 +99,6 @@ class  RaportZone3Fragment : BaseFragment() {
         raport.lr14?.let { zone3_report_lp14.setChecked(it) }
         raport.lr15?.let { zone3_report_lp15.setChecked(it) }
         raport.lr16?.let { zone3_report_lp16.setChecked(it) }
-        raport.lr21?.let { zone3_report_lp21.setChecked(it) }
-        raport.lr22?.let { zone3_report_lp22.setChecked(it) }
-        raport.lr23?.let { zone3_report_lp23.setChecked(it) }
-        raport.lr24?.let { zone3_report_lp24.setChecked(it) }
-        raport.lr25?.let { zone3_report_lp25.setChecked(it) }
         if (raport.uid != auth.currentUser?.uid) {
             zone3_name_spinner.setEnabled(false)
             zone3_report_lp1.setEnabled(false)
@@ -122,11 +117,6 @@ class  RaportZone3Fragment : BaseFragment() {
             zone3_report_lp14.setEnabled(false)
             zone3_report_lp15.setEnabled(false)
             zone3_report_lp16.setEnabled(false)
-            zone3_report_lp21.setEnabled(false)
-            zone3_report_lp22.setEnabled(false)
-            zone3_report_lp23.setEnabled(false)
-            zone3_report_lp24.setEnabled(false)
-            zone3_report_lp25.setEnabled(false)
         }
     }
 
@@ -154,17 +144,12 @@ class  RaportZone3Fragment : BaseFragment() {
                 "lr14" to zone3_report_lp14.isChecked,
                 "lr15" to zone3_report_lp15.isChecked,
                 "lr16" to zone3_report_lp16.isChecked,
-                "lr21" to zone3_report_lp21.isChecked, //okresowo dlatego start od 20
-                "lr22" to zone3_report_lp22.isChecked,//okresowo dlatego start od 20
-                "lr23" to zone3_report_lp23.isChecked,//okresowo dlatego start od 20
-                "lr24" to zone3_report_lp24.isChecked, //okresowo dlatego start od 20
-                "lr25" to zone3_report_lp25.isChecked,//okresowo dlatego start od 20
                )
 
         data.put("control",control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
         data.put("name", zone3_name_spinner.selectedItem)
-        data.put("zone", "Strefa 3 - okresowo")
+        data.put("zone", "Strefa 3")
         data.put("date", Timestamp(Date()))
         data.put("cid", "NBP")
 
@@ -181,7 +166,7 @@ class  RaportZone3Fragment : BaseFragment() {
                            Log.w(ContentValues.TAG, "Error adding document", e)
                        }
             findNavController()
-                .navigate(RaportZone3FragmentDirections.actionRaportFragmentz3ToHomeFragment().actionId)
+                .navigate(RaportZone3ShortFragmentDirections.actionRaportZone3ShortFragmentToHomeFragment().actionId)
             Snackbar.make(requireView(), "Raport został wysłany!", Snackbar.LENGTH_SHORT)
                 .show()
                }
@@ -202,7 +187,7 @@ class  RaportZone3Fragment : BaseFragment() {
 
 
                     findNavController()
-                        .navigate(RaportZone3FragmentDirections.actionRaportFragmentz3ToHomeFragment().actionId)
+                        .navigate(RaportZone3ShortFragmentDirections.actionRaportZone3ShortFragmentToHomeFragment().actionId)
                     Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
                         .show()
 

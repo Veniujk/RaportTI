@@ -14,6 +14,7 @@ import com.example.pupmaag.data.Raport
 import com.example.pupmaag.profile.ProfileFragmentDirections
 import com.example.pupmaag.raport.RaportFragmentDirections
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.auth.User
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.list_row.*
 
@@ -30,6 +31,7 @@ class HomeFragment : BaseFragment(), OnRaportItemLongClick {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -68,38 +70,86 @@ class HomeFragment : BaseFragment(), OnRaportItemLongClick {
 
         if (raport.zone == "Strefa 1"){
             findNavController()
-                .navigate(HomeFragmentDirections.actionHomeFragmentToRaportFragmentz1().actionId,bundle)}
-        else{
-            if (raport.zone == "Strefa 2"){
+                .navigate(HomeFragmentDirections.actionHomeFragmentToRaportZone1ShortFragment().actionId,bundle)}
+        else {
+            if (raport.zone == "Strefa 1 - okresowo"){
                 findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToRaportFragmentz2().actionId,bundle)}
-            else{
-                if (raport.zone == "Strefa 3"){
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToRaportFragmentz1().actionId,bundle)}
+        else {
+                if (raport.zone == "Strefa 2") {
                     findNavController()
-                        .navigate(HomeFragmentDirections.actionHomeFragmentToRaportFragmentz3().actionId,bundle)}
-                else{
-                    if (raport.zone == "Strefa 4"){
+                        .navigate(HomeFragmentDirections.actionHomeFragmentToRaportZone2ShortFragment().actionId,
+                            bundle
+                        )
+                } else {
+                    if (raport.zone == "Strefa 2 - okresowo") {
                         findNavController()
-                            .navigate(HomeFragmentDirections.actionHomeFragmentToRaportFragmentz4().actionId,bundle)}
-                    else {
-                        if (raport.zone == "Strefa 5 - okres zimowy") {
+                            .navigate(
+                                HomeFragmentDirections.actionHomeFragmentToRaportFragmentz2().actionId,
+                                bundle
+                            )
+                    } else {
+                        if (raport.zone == "Strefa 3") {
                             findNavController()
-                                .navigate(
-                                    HomeFragmentDirections.actionHomeFragmentToRaportFragmentz5().actionId,
+                                .navigate(HomeFragmentDirections.actionHomeFragmentToRaportZone3ShortFragment().actionId,
                                     bundle
                                 )
                         } else {
-                            findNavController()
-                                .navigate(
-                                    HomeFragmentDirections.actionHomeFragmentToRaportFragmentz6().actionId,
-                                    bundle
-                                )
-                        }
+                            if (raport.zone == "Strefa 3 - okresowo") {
+                                findNavController()
+                                    .navigate(
+                                        HomeFragmentDirections.actionHomeFragmentToRaportFragmentz3().actionId,
+                                        bundle
+                                    )
+                            } else {
+                                if (raport.zone == "Strefa 4") {
+                                    findNavController()
+                                        .navigate(HomeFragmentDirections.actionHomeFragmentToRaportZone4ShortFragment().actionId,
+                                            bundle
+                                        )
+                                } else {
+                                    if (raport.zone == "Strefa 4 - okresowo") {
+                                        findNavController()
+                                            .navigate(
+                                                HomeFragmentDirections.actionHomeFragmentToRaportFragmentz4().actionId,
+                                                bundle
+                                            )
+                                    } else {
+                                        if (raport.zone == "Strefa 5 - okres zimowy") {
+                                            findNavController()
+                                                .navigate(HomeFragmentDirections.actionHomeFragmentToRaportZone5ShortFragment().actionId,
+                                                    bundle
+                                                )
+                                        } else {
+                                            if (raport.zone == "Strefa 5 - okres zimowy - okresowo") {
+                                                findNavController()
+                                                    .navigate(
+                                                        HomeFragmentDirections.actionHomeFragmentToRaportFragmentz5().actionId,
+                                                        bundle
+                                                    )
+                                            } else {
+                                                if (raport.zone == "Strefa 5 - okres letni - okresowo") {
+                                                    findNavController()
+                                                        .navigate(HomeFragmentDirections.actionHomeFragmentToRaportFragmentz6().actionId,
+                                                            bundle
+                                                        )
+                                                } else {
+                                                    findNavController()
+                                                        .navigate(
+                                                            HomeFragmentDirections.actionHomeFragmentToRaportZone6ShortFragment().actionId,
+                                                            bundle
+                                                        )
+                                                }
 
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
-
 }
