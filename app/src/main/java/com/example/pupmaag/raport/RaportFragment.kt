@@ -22,7 +22,7 @@ class RaportFragment : BaseFragment() {
 
 
    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+       super.onViewCreated(view, savedInstanceState)
        openReportZone1()
        openReportZone2()
        openReportZone3()
@@ -39,7 +39,6 @@ class RaportFragment : BaseFragment() {
        }
 
     private fun openReportZone1() {
-
         GoTo_fragment_raport_zone1.setOnClickListener {
             findNavController()
                 .navigate(RaportFragmentDirections.actionRaportFragmentToRaportFragmentz1().actionId)
@@ -49,7 +48,7 @@ class RaportFragment : BaseFragment() {
     private fun openReportZone2() {
         GoTo_fragment_raport_zone2.setOnClickListener {
             findNavController()
-            .navigate(RaportFragmentDirections.actionRaportFragmentToRaportFragmentz2().actionId)
+                .navigate(RaportFragmentDirections.actionRaportFragmentToRaportFragmentz2().actionId)
         }
 
     }
