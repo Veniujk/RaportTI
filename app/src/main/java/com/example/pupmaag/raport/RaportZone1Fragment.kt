@@ -41,7 +41,6 @@ class RaportZone1Fragment : BaseFragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         when (item.itemId) {
             R.id.send_action -> {
                 openReportZone1Click(arguments?.get("raport"))}
@@ -194,24 +193,29 @@ class RaportZone1Fragment : BaseFragment() {
         }
         else
         {
-
-            raport.documentId?.let {
-                cloud.collection("raports")
-                    .document(it)
-                    .set(data)
-                    .addOnSuccessListener {
-                       // Log.d(REPO_DEBUG, "Dodana do ulubionych")
-                    }
-                    .addOnFailureListener{
-                      //  Log.d(REPO_DEBUG, it.message.toString())
-                    }
+            if (raport.uid == auth.currentUser?.uid) {
+                raport.documentId?.let {
+                    cloud.collection("raports")
+                        .document(it)
+                        .set(data)
+                        .addOnSuccessListener {
+                            // Log.d(REPO_DEBUG, "Dodana do ulubionych")
+                        }
+                        .addOnFailureListener {
+                            //  Log.d(REPO_DEBUG, it.message.toString())
+                        }
+                }
+                findNavController()
+                    .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
+                Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
+                    .show()
+            } else {
+                findNavController()
+                .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
+                Snackbar.make(requireView(), "Brak uprawnień do edycji! Powrócono do podglądu raportów...", Snackbar.LENGTH_SHORT)
+                    .show()
             }
 
-
-           findNavController()
-                .navigate(RaportZone1FragmentDirections.actionRaportFragmentz1ToHomeFragment().actionId)
-            Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
-                .show()
 
         }
 

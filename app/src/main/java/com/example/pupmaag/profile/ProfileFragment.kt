@@ -76,8 +76,7 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
 
         profileVm.userRaports.observe(viewLifecycleOwner, { list ->
             list?.let {
-                //adapter.setRaports(it)
-                adapter.setRaports(list.sortedByDescending { it.date })
+              adapter.setRaports(list.sortedByDescending { it.date })
             }
         })
     }

@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.pupmaag.BaseFragment
 import com.example.pupmaag.R
+import com.example.pupmaag.data.User
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_raport.*
 
 class RaportFragment : BaseFragment() {
-    private val auth = FirebaseAuth.getInstance()
-     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         return inflater.inflate(R.layout.fragment_raport, container, false)
@@ -38,11 +39,13 @@ class RaportFragment : BaseFragment() {
        }
 
     private fun openReportZone1() {
+
         GoTo_fragment_raport_zone1.setOnClickListener {
             findNavController()
                 .navigate(RaportFragmentDirections.actionRaportFragmentToRaportFragmentz1().actionId)
         }
     }
+
     private fun openReportZone2() {
         GoTo_fragment_raport_zone2.setOnClickListener {
             findNavController()

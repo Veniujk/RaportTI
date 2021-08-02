@@ -193,7 +193,7 @@ class  RaportZone4Fragment : BaseFragment() {
                }
                  else
                  {
-
+                     if (raport.uid == auth.currentUser?.uid) {
                      raport.documentId?.let {
                          cloud.collection("raports")
                              .document(it)
@@ -211,7 +211,12 @@ class  RaportZone4Fragment : BaseFragment() {
                          .navigate(RaportZone4FragmentDirections.actionRaportFragmentz4ToHomeFragment().actionId)
                      Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
                          .show()
-
+                 } else {
+            findNavController()
+                .navigate(RaportZone4FragmentDirections.actionRaportFragmentz4ToHomeFragment().actionId)
+            Snackbar.make(requireView(), "Brak uprawnień do edycji! Powrócono do podglądu raportów...", Snackbar.LENGTH_SHORT)
+                .show()
+        }
                  }
 
 

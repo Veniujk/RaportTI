@@ -186,7 +186,7 @@ private fun editReportZoneClick(raport: Raport) {
                }
             else
             {
-
+                if (raport.uid == auth.currentUser?.uid) {
                 raport.documentId?.let {
                     cloud.collection("raports")
                         .document(it)
@@ -204,6 +204,12 @@ private fun editReportZoneClick(raport: Raport) {
                     .navigate(RaportZone2FragmentDirections.actionRaportFragmentz2ToHomeFragment().actionId)
                 Snackbar.make(requireView(), "Zmiany zostały zapisane!", Snackbar.LENGTH_SHORT)
                     .show()
+                } else {
+                    findNavController()
+                        .navigate(RaportZone2FragmentDirections.actionRaportFragmentz2ToHomeFragment().actionId)
+                    Snackbar.make(requireView(), "Brak uprawnień do edycji! Powrócono do podglądu raportów...", Snackbar.LENGTH_SHORT)
+                        .show()
+                }
 
             }
            }
