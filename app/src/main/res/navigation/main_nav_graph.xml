@@ -7,7 +7,7 @@
     <fragment
         tools:layout="@layout/fragment_home"
         android:id="@+id/homeFragment"
-        android:name="com.example.pupmaag.home.HomeFragment"
+        android:name="com.example.raportHDPro.home.HomeFragment"
         android:label="Raporty" >
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
@@ -55,7 +55,7 @@
     <fragment
         tools:layout="@layout/fragment_raport"
         android:id="@+id/raportFragment"
-        android:name="com.example.pupmaag.raport.RaportFragment"
+        android:name="com.example.raportHDPro.raport.RaportFragment"
         android:label="Dodaj Raport" >
         <action
             android:id="@+id/action_raportFragment_to_raportFragmentz1"
@@ -99,7 +99,7 @@
     <fragment
         tools:layout="@layout/fragment_profile"
         android:id="@+id/profileFragment"
-        android:name="com.example.pupmaag.profile.ProfileFragment"
+        android:name="com.example.raportHDPro.profile.ProfileFragment"
         android:label="Twój Profil" >
         <action
             android:id="@+id/action_profileFragment_to_raportFragmentz1"
@@ -141,7 +141,7 @@
 
     <fragment
         android:id="@+id/raportFragmentz1"
-        android:name="com.example.pupmaag.raport.RaportZone1Fragment"
+        android:name="com.example.raportHDPro.raport.RaportZone1Fragment"
         android:label="Strefa I"
         tools:layout="@layout/fragment_raport_zone1">
         <action
@@ -154,7 +154,7 @@
 
     <fragment
         android:id="@+id/raportFragmentz2"
-        android:name="com.example.pupmaag.raport.RaportZone2Fragment"
+        android:name="com.example.raportHDPro.raport.RaportZone2Fragment"
         android:label="Strefa II"
         tools:layout="@layout/fragment_raport_zone2">
         <action
@@ -164,7 +164,7 @@
 
     <fragment
         android:id="@+id/raportFragmentz3"
-        android:name="com.example.pupmaag.raport.RaportZone3Fragment"
+        android:name="com.example.raportHDPro.raport.RaportZone3Fragment"
         android:label="Strefa III">
         <action
             android:id="@+id/action_raportFragmentz3_to_homeFragment"
@@ -173,7 +173,7 @@
 
     <fragment
         android:id="@+id/raportFragmentz4"
-        android:name="com.example.pupmaag.raport.RaportZone4Fragment"
+        android:name="com.example.raportHDPro.raport.RaportZone4Fragment"
         android:label="Strefa IV"
         tools:layout="@layout/fragment_raport_zone4">
         <action
@@ -183,7 +183,7 @@
 
     <fragment
         android:id="@+id/raportFragmentz5"
-        android:name="com.example.pupmaag.raport.RaportZone5Fragment"
+        android:name="com.example.raportHDPro.raport.RaportZone5Fragment"
         android:label="Strefa V - okres zimowy"
         tools:layout="@layout/fragment_raport_zone5">
         <action
@@ -193,7 +193,7 @@
 
     <fragment
         android:id="@+id/raportFragmentz6"
-        android:name="com.example.pupmaag.raport.RaportZone6Fragment"
+        android:name="com.example.raportHDPro.raport.RaportZone6Fragment"
         android:label="Strefa V - okres letni"
         tools:layout="@layout/fragment_raport_zone6">
         <action
@@ -202,7 +202,7 @@
     </fragment>
     <fragment
         android:id="@+id/raportZone1ShortFragment"
-        android:name="com.example.pupmaag.raport.RaportZone1ShortFragment"
+        android:name="com.example.raportHDPro.raport.RaportZone1ShortFragment"
         android:label="Strefa I">
         <action
             android:id="@+id/action_raportZone1ShortFragment_to_homeFragment"
@@ -210,7 +210,7 @@
     </fragment>
     <fragment
         android:id="@+id/raportZone2ShortFragment"
-        android:name="com.example.pupmaag.raport.RaportZone2ShortFragment"
+        android:name="com.example.raportHDPro.raport.RaportZone2ShortFragment"
         android:label="Strefa II">
         <action
             android:id="@+id/action_raportZone2ShortFragment_to_homeFragment"
@@ -218,7 +218,7 @@
     </fragment>
     <fragment
         android:id="@+id/raportZone3ShortFragment"
-        android:name="com.example.pupmaag.raport.RaportZone3ShortFragment"
+        android:name="com.example.raportHDPro.raport.RaportZone3ShortFragment"
         android:label="Strefa III">
         <action
             android:id="@+id/action_raportZone3ShortFragment_to_homeFragment"
@@ -226,7 +226,7 @@
     </fragment>
     <fragment
         android:id="@+id/raportZone4ShortFragment"
-        android:name="com.example.pupmaag.raport.RaportZone4ShortFragment"
+        android:name="com.example.raportHDPro.raport.RaportZone4ShortFragment"
         android:label="Strefa IV">
         <action
             android:id="@+id/action_raportZone4ShortFragment_to_homeFragment"
@@ -234,7 +234,7 @@
     </fragment>
     <fragment
         android:id="@+id/raportZone5ShortFragment"
-        android:name="com.example.pupmaag.raport.RaportZone5ShortFragment"
+        android:name="com.example.raportHDPro.raport.RaportZone5ShortFragment"
         android:label="Strefa V - okres zimowy">
         <action
             android:id="@+id/action_raportZone5ShortFragment_to_homeFragment"
@@ -242,7 +242,7 @@
     </fragment>
     <fragment
         android:id="@+id/raportZone6ShortFragment"
-        android:name="com.example.pupmaag.raport.RaportZone6ShortFragment"
+        android:name="com.example.raportHDPro.raport.RaportZone6ShortFragment"
         android:label="Strefa V - okres letni">
         <action
             android:id="@+id/action_raportZone6ShortFragment_to_homeFragment"

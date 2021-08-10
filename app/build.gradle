@@ -11,7 +11,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.pupmaag"
+        applicationId "com.example.raportHDPro"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
@@ -42,7 +42,7 @@ android {
 dependencies {
 
     //Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:28.3.0')
+    implementation platform('com.google.firebase:firebase-bom:28.3.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     //Firebase Auth
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'

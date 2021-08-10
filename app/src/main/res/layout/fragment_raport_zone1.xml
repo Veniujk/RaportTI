@@ -21,7 +21,7 @@
             android:layout_weight="8"
             android:text="Wybierz kontrolowane pomieszczenie: " />
 
-        <com.example.pupmaag.data.MySpinner
+        <com.example.raportHDPro.data.MySpinner
             android:id="@+id/zone1_name_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

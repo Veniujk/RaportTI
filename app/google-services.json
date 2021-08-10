@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "830825212483",
-    "project_id": "pupmaag-e47b4",
-    "storage_bucket": "pupmaag-e47b4.appspot.com"
+    "project_number": "239136498377",
+    "project_id": "hdpro-raport",
+    "storage_bucket": "hdpro-raport.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:830825212483:android:8f2e0417e6d1fdfae902f6",
+        "mobilesdk_app_id": "1:239136498377:android:5631a4b3067d333f41e318",
         "android_client_info": {
-          "package_name": "com.example.pupmaag"
+          "package_name": "com.example.raportHDPro"
         }
       },
       "oauth_client": [
         {
-          "client_id": "830825212483-19vbfsuovo120rmo09k6gm0f5pf5di64.apps.googleusercontent.com",
+          "client_id": "239136498377-abmcan65v14h6ba2dee8dhsb8b4v9b6g.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDbHODVuSuu5_jgG5PIINvs3h_7LZlxOPI"
+          "current_key": "AIzaSyDHrc1tnDsidlSFlIXraZx2Y0O2uJMyTxg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "830825212483-19vbfsuovo120rmo09k6gm0f5pf5di64.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:830825212483:android:78be1599357adcfae902f6",
-        "android_client_info": {
-          "package_name": "com.example.pupmaagapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "830825212483-19vbfsuovo120rmo09k6gm0f5pf5di64.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDbHODVuSuu5_jgG5PIINvs3h_7LZlxOPI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "830825212483-19vbfsuovo120rmo09k6gm0f5pf5di64.apps.googleusercontent.com",
+              "client_id": "239136498377-abmcan65v14h6ba2dee8dhsb8b4v9b6g.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
