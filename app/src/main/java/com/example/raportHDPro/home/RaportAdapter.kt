@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.raportHDPro.R
 import com.example.raportHDPro.data.Raport
@@ -37,10 +38,11 @@ class RaportAdapter(private val listener: OnRaportItemLongClick) :
         val data = holder.itemView.findViewById<TextView>(R.id.raportDate)
         val control = holder.itemView.findViewById<TextView>(R.id.raportControl)
         name.text = raportsList[holder.adapterPosition].name
-        zone.text = raportsList[holder.adapterPosition].zone
+        zone.text = raportsList[holder.adapterPosition].uemail
        data.text = SimpleDateFormat("dd/MM/yyyy HH:mm").format(raportsList[holder.adapterPosition].date?.toDate())
        // data.text = SimpleDateFormat("dd/MM/yyyy").format(raportsList[holder.adapterPosition].date?.toDate())
         control.text = "Wynik kontroli: " + raportsList[holder.adapterPosition].control + "%"
+
 
        }
 

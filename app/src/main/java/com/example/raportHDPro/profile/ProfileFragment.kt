@@ -137,85 +137,9 @@ class ProfileFragment : BaseFragment(), OnRaportItemLongClick {
 
     override fun onRaportLongClick(raport: Raport, position: Int) {
         val bundle = bundleOf("raport" to raport)
-
-        if (raport.zone == "Strefa 1"){
-        findNavController()
-            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportZone1ShortFragment().actionId,bundle)}
-        else{
-            if (raport.zone == "Strefa 1 - okresowo"){
                 findNavController()
-                    .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz1().actionId,bundle)}
-        else {
-                if (raport.zone == "Strefa 2") {
-                    findNavController()
-                        .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportZone2ShortFragment().actionId,
-                            bundle
-                        )
-                }
-                if (raport.zone == "Strefa 2 - okresowo") {
-                    findNavController()
-                        .navigate(
-                            ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz2().actionId,
-                            bundle
-                        )
-                } else {
-                    if (raport.zone == "Strefa 3") {
-                        findNavController()
-                            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportZone3ShortFragment().actionId,
-                                bundle
-                            )
-                    } else {
-                        if (raport.zone == "Strefa 3 - okresowo") {
-                            findNavController()
-                                .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz3().actionId,
-                                    bundle
-                                )
-                        } else {
-                        }
-                        if (raport.zone == "Strefa 4") {
-                            findNavController()
-                                .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportZone4ShortFragment().actionId,
-                                    bundle
-                                )
-                        } else {
-                            if (raport.zone == "Strefa 4 - okresowo") {
-                                findNavController()
-                                    .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz4().actionId,
-                                        bundle
-                                    )
-                            } else {
-                            }
-                            if (raport.zone == "Strefa 5 - okres zimowy") {
-                                findNavController()
-                                    .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportZone5ShortFragment().actionId,
-                                        bundle
-                                    )
-                            } else {
-                                if (raport.zone == "Strefa 5 - okres zimowy - okresowo") {
-                                    findNavController()
-                                        .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz5().actionId,
-                                            bundle
-                                        )
-                                } else {
-                                    if (raport.zone == "Strefa 5 - okres letni - okresowo") {
-                                        findNavController()
-                                            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragmentz6().actionId,
-                                                bundle
-                                            )
-                                    } else {
-                                        findNavController()
-                                            .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportZone6ShortFragment().actionId,
-                                                bundle
-                                            )
-                                    }
+                    .navigate(ProfileFragmentDirections.actionProfileFragmentToRaportFragment().actionId,bundle)}
 
-                                }
-                            }
-                        }
-                    }
-                }
-        }
-        }
+
+
     }
-
-}

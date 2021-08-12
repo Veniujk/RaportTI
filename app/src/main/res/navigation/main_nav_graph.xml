@@ -18,39 +18,6 @@
         <action
             android:id="@+id/action_homeFragment_to_raportFragmentz1"
             app:destination="@id/raportFragmentz1" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz2"
-            app:destination="@id/raportFragmentz2" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz4"
-            app:destination="@id/raportFragmentz4" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz3"
-            app:destination="@id/raportFragmentz3" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz5"
-            app:destination="@id/raportFragmentz5" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportFragmentz6"
-            app:destination="@id/raportFragmentz6" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportZone1ShortFragment"
-            app:destination="@id/raportZone1ShortFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportZone2ShortFragment"
-            app:destination="@id/raportZone2ShortFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportZone3ShortFragment"
-            app:destination="@id/raportZone3ShortFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportZone4ShortFragment"
-            app:destination="@id/raportZone4ShortFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportZone5ShortFragment"
-            app:destination="@id/raportZone5ShortFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_raportZone6ShortFragment"
-            app:destination="@id/raportZone6ShortFragment" />
     </fragment>
     <fragment
         tools:layout="@layout/fragment_raport"
@@ -61,38 +28,8 @@
             android:id="@+id/action_raportFragment_to_raportFragmentz1"
             app:destination="@id/raportFragmentz1" />
         <action
-            android:id="@+id/action_raportFragment_to_raportFragmentz2"
-            app:destination="@id/raportFragmentz2" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportFragmentz3"
-            app:destination="@id/raportFragmentz3" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportFragmentz4"
-            app:destination="@id/raportFragmentz4" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportFragmentz5"
-            app:destination="@id/raportFragmentz5" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportFragmentz6"
-            app:destination="@id/raportFragmentz6" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportZone1ShortFragment"
-            app:destination="@id/raportZone1ShortFragment" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportZone2ShortFragment"
-            app:destination="@id/raportZone2ShortFragment" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportZone3ShortFragment"
-            app:destination="@id/raportZone3ShortFragment" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportZone4ShortFragment"
-            app:destination="@id/raportZone4ShortFragment" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportZone5ShortFragment"
-            app:destination="@id/raportZone5ShortFragment" />
-        <action
-            android:id="@+id/action_raportFragment_to_raportZone6ShortFragment"
-            app:destination="@id/raportZone6ShortFragment" />
+            android:id="@+id/action_raportFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
 
@@ -105,38 +42,8 @@
             android:id="@+id/action_profileFragment_to_raportFragmentz1"
             app:destination="@id/raportFragmentz1" />
         <action
-            android:id="@+id/action_profileFragment_to_raportFragmentz2"
-            app:destination="@id/raportFragmentz2" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportFragmentz4"
-            app:destination="@id/raportFragmentz4" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportFragmentz3"
-            app:destination="@id/raportFragmentz3" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportFragmentz5"
-            app:destination="@id/raportFragmentz5" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportFragmentz6"
-            app:destination="@id/raportFragmentz6" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportZone1ShortFragment"
-            app:destination="@id/raportZone1ShortFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportZone2ShortFragment"
-            app:destination="@id/raportZone2ShortFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportZone3ShortFragment"
-            app:destination="@id/raportZone3ShortFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportZone4ShortFragment"
-            app:destination="@id/raportZone4ShortFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportZone5ShortFragment"
-            app:destination="@id/raportZone5ShortFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_raportZone6ShortFragment"
-            app:destination="@id/raportZone6ShortFragment" />
+            android:id="@+id/action_profileFragment_to_raportFragment"
+            app:destination="@id/raportFragment" />
     </fragment>
 
     <fragment
@@ -152,100 +59,4 @@
             app:destination="@id/homeFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/raportFragmentz2"
-        android:name="com.example.raportHDPro.raport.RaportZone2Fragment"
-        android:label="Strefa II"
-        tools:layout="@layout/fragment_raport_zone2">
-        <action
-            android:id="@+id/action_raportFragmentz2_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/raportFragmentz3"
-        android:name="com.example.raportHDPro.raport.RaportZone3Fragment"
-        android:label="Strefa III">
-        <action
-            android:id="@+id/action_raportFragmentz3_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/raportFragmentz4"
-        android:name="com.example.raportHDPro.raport.RaportZone4Fragment"
-        android:label="Strefa IV"
-        tools:layout="@layout/fragment_raport_zone4">
-        <action
-            android:id="@+id/action_raportFragmentz4_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/raportFragmentz5"
-        android:name="com.example.raportHDPro.raport.RaportZone5Fragment"
-        android:label="Strefa V - okres zimowy"
-        tools:layout="@layout/fragment_raport_zone5">
-        <action
-            android:id="@+id/action_raportFragmentz5_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/raportFragmentz6"
-        android:name="com.example.raportHDPro.raport.RaportZone6Fragment"
-        android:label="Strefa V - okres letni"
-        tools:layout="@layout/fragment_raport_zone6">
-        <action
-            android:id="@+id/action_raportFragmentz6_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/raportZone1ShortFragment"
-        android:name="com.example.raportHDPro.raport.RaportZone1ShortFragment"
-        android:label="Strefa I">
-        <action
-            android:id="@+id/action_raportZone1ShortFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/raportZone2ShortFragment"
-        android:name="com.example.raportHDPro.raport.RaportZone2ShortFragment"
-        android:label="Strefa II">
-        <action
-            android:id="@+id/action_raportZone2ShortFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/raportZone3ShortFragment"
-        android:name="com.example.raportHDPro.raport.RaportZone3ShortFragment"
-        android:label="Strefa III">
-        <action
-            android:id="@+id/action_raportZone3ShortFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/raportZone4ShortFragment"
-        android:name="com.example.raportHDPro.raport.RaportZone4ShortFragment"
-        android:label="Strefa IV">
-        <action
-            android:id="@+id/action_raportZone4ShortFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/raportZone5ShortFragment"
-        android:name="com.example.raportHDPro.raport.RaportZone5ShortFragment"
-        android:label="Strefa V - okres zimowy">
-        <action
-            android:id="@+id/action_raportZone5ShortFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/raportZone6ShortFragment"
-        android:name="com.example.raportHDPro.raport.RaportZone6ShortFragment"
-        android:label="Strefa V - okres letni">
-        <action
-            android:id="@+id/action_raportZone6ShortFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
 </navigation>

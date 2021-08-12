@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_raport_zone1.*
 import java.util.*
 
-
+/*
 class RaportZone1Fragment : BaseFragment() {
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
@@ -230,4 +230,4 @@ class RaportZone1Fragment : BaseFragment() {
 
 
 
-
+*/
