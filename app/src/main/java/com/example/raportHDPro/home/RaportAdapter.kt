@@ -33,11 +33,11 @@ class RaportAdapter(private val listener: OnRaportItemLongClick) :
     }
 
     private fun bindData(holder: RaportViewHolder) {
-        val name = holder.itemView.findViewById<TextView>(R.id.roomName)
+        //val name = holder.itemView.findViewById<TextView>(R.id.roomName)
         val zone = holder.itemView.findViewById<TextView>(R.id.raportZone)
         val data = holder.itemView.findViewById<TextView>(R.id.raportDate)
         val control = holder.itemView.findViewById<TextView>(R.id.raportControl)
-        name.text = raportsList[holder.adapterPosition].name
+        //name.text = raportsList[holder.adapterPosition].name
         zone.text = raportsList[holder.adapterPosition].uemail
        data.text = SimpleDateFormat("dd/MM/yyyy HH:mm").format(raportsList[holder.adapterPosition].date?.toDate())
        // data.text = SimpleDateFormat("dd/MM/yyyy").format(raportsList[holder.adapterPosition].date?.toDate())

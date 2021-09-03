@@ -54,7 +54,7 @@ class RaportFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val rooms = arrayOf(
+   /*     val rooms = arrayOf(
             "TISO001",
             "TISO002",
             "TISO003",
@@ -78,6 +78,8 @@ class RaportFragment : BaseFragment() {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         zone1_name_spinner.adapter = arrayAdapter
+        */
+
         val arguementRaport = arguments?.get("raport")
 
         if (arguementRaport != null) {
@@ -98,9 +100,9 @@ class RaportFragment : BaseFragment() {
     }
 
     private fun editReportZoneClick(raport: Raport) {
-        raport.name?.let { getIndex(zone1_name_spinner, it) }?.let {
+      /*  raport.name?.let { getIndex(zone1_name_spinner, it) }?.let {
         zone1_name_spinner.setSelection(it)
-        }
+        }*/
         raport.lr1?.let { zone1_report_lp1.isChecked = it }
         raport.lr2?.let { zone1_report_lp2.isChecked = it }
         raport.lr3?.let { zone1_report_lp3.isChecked = it }
@@ -117,7 +119,7 @@ class RaportFragment : BaseFragment() {
         raport.lr14?.let { zone1_report_lp14.isChecked = it }
         raport.lr15?.let { zone1_report_lp15.isChecked = it }
         raport.lr16?.let { zone1_report_lp16.isChecked = it }
-        raport.lr17?.let { zone1_report_lp17.isChecked = it }
+
 
 
      /*   raport.lr18?.let { zone1_report_lp18.isChecked = it }
@@ -126,7 +128,7 @@ class RaportFragment : BaseFragment() {
         raport.lr23?.let { zone1_report_lp23.isChecked = it }*/
 
         if (raport.uid != auth.currentUser?.uid) {
-            zone1_name_spinner.isEnabled = false
+          //  zone1_name_spinner.isEnabled = false
             zone1_report_lp1.isEnabled = false
             zone1_report_lp2.isEnabled = false
             zone1_report_lp3.isEnabled = false
@@ -143,7 +145,7 @@ class RaportFragment : BaseFragment() {
             zone1_report_lp14.isEnabled = false
             zone1_report_lp15.isEnabled = false
             zone1_report_lp16.isEnabled = false
-            zone1_report_lp17.isEnabled = false
+          //  zone1_report_lp17.isEnabled = false
            /* zone1_report_lp18.isEnabled = false
             zone1_report_lp21.isEnabled = false
             zone1_report_lp22.isEnabled = false
@@ -174,7 +176,7 @@ class RaportFragment : BaseFragment() {
             "lr14" to zone1_report_lp14.isChecked,
             "lr15" to zone1_report_lp15.isChecked,
             "lr16" to zone1_report_lp16.isChecked,
-            "lr17" to zone1_report_lp17.isChecked,
+          //  "lr17" to zone1_report_lp17.isChecked,
            /* "lr18" to zone1_report_lp18.isChecked,
             "lr21" to zone1_report_lp21.isChecked, //okresowo dlatego start od 20
             "lr22" to zone1_report_lp22.isChecked,//okresowo dlatego start od 20
@@ -184,7 +186,7 @@ class RaportFragment : BaseFragment() {
         data.put("control", control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
         auth.currentUser?.email?.let { it1 -> data.put("uemail", it1) }
-        data.put("name", zone1_name_spinner.selectedItem)
+      //  data.put("name", zone1_name_spinner.selectedItem)
         data.put("date", Timestamp(Date()))
         data.put("cid", "Top-Info")
         data.put("uwagi",text_input_uwagi.text.toString())

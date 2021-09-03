@@ -10,152 +10,144 @@
         android:layout_height="fill_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <!--    <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/zone1_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="8"
-            android:text="Wybierz kontrolowane stanowisko: " />
+                    <TextView
+                        android:id="@+id/zone1_TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:text="Wybierz kontrolowane stanowisko: " />
 
-        <com.example.raportHDPro.data.MySpinner
-            android:id="@+id/zone1_name_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="8" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <com.example.raportHDPro.data.MySpinner
+                        android:id="@+id/zone1_name_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    -->
         <TextView
             android:id="@+id/zone1_TextView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="8"
-            android:text="Kontrola sprzętu: " />
+            android:layout_marginLeft="10dp"
+            android:text="Kontrola skanerów o numerach ewidencyjnych: " />
+
         <CheckBox
             android:id="@+id/zone1_report_lp1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Komputer - działa prawidłowo." />
+            android:text=" TISO001 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Myszka - działa prawidłowo." />
+            android:text=" TISO002 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Klawiatura - działa prawidłowo." />
+            android:text=" TISO003 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Skaner kodów kreskowych - działa prawidłowo." />
+            android:text=" TISO004 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Monitor - działa prawidłowo." />
+            android:text=" TISO005 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="UPS - działa prawidłowo." />
-        <TextView
-            android:id="@+id/zone1_TextView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="8"
-            android:text="Kontrola skanera: " />
+            android:text=" TISO006 - działa prawidłowo." />
+
         <CheckBox
             android:id="@+id/zone1_report_lp7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Flatbed - nie zacina się." />
+            android:text=" TISO007 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Flatbed - nie wydaje nieporządanych dzwięków." />
+            android:text=" TISO008 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Flatbed - skanuje w dobrej jakości." />
+            android:text=" TISO009 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Flatbed - dobrze przycina strony." />
+            android:text=" TISO010 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Flatbed - skanuje z odpowiednią prędkością." />
+            android:text=" TISO011 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="ADF - nie zacina się." />
+            android:text=" TISO012 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="ADF - nie wydaje nieporządanych dzwięków." />
+            android:text=" TISO013 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="ADF - skanuje w dobrej jakości." />
+            android:text=" TISO014 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="ADF - dobrze przycina strony." />
+            android:text=" TISO015 - działa prawidłowo." />
 
         <CheckBox
             android:id="@+id/zone1_report_lp16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="ADF - skanuje z wysoką prędkościa." />
+            android:text=" TISO016 - działa prawidłowo." />
 
-        <CheckBox
-            android:id="@+id/zone1_report_lp17"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="ADF - rolki są w dobrym stanie." />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

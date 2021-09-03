@@ -14,113 +14,122 @@
 
         <ImageView
             android:id="@+id/userImage"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginEnd="@dimen/iv_profile_page_margin_end"
             tools:src="@tools:sample/avatars" />
 
         <LinearLayout
+            android:id="@+id/usersection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/userImage"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewName"
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/userImage"
-                android:text="@string/main_page_tv_name"
-                android:textColor="@color/light_black"
-                android:textSize="@dimen/tv_profile_page_text_size" />
+                android:background="@drawable/blue_border_rounded_cornwe">
+                <EditText
+                    android:id="@+id/userNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Imię i Nazwisko"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
 
-            <EditText
-                android:id="@+id/userNameET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textViewName"
-                android:layout_toRightOf="@id/userImage"
-                android:hint="@string/main_page_ed_name"
-                android:textColor="@color/light_black" />
-
-
-            <TextView
-                android:id="@+id/textViewSurname"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/userNameET"
-                android:layout_toRightOf="@id/userImage"
-                android:text="@string/main_page_tv_surname"
-                android:textColor="@color/light_black"
-                android:textSize="@dimen/tv_profile_page_text_size" />
-
-            <EditText
-                android:id="@+id/userSurnameET"
-                android:layout_width="match_parent"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+                <TextView
+                    android:id="@+id/userEmailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_marginTop="1dp"
+                    android:hint="@string/main_page_ed_email"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewSurname"
-                android:layout_toRightOf="@id/userImage"
-                android:hint="@string/main_page_ed_surname"
-                android:textColor="@color/light_black" />
-
-            <Button
+                android:layout_marginTop="2dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+                <EditText
+                    android:id="@+id/userSurnameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Organizacja"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+            <TextView
                 android:id="@+id/submitDataProfile"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginHorizontal="@dimen/button_sign_in_margin_horizontal"
-                android:background="@color/material_medium"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/blue_fill__rounded_color"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:text="Aktualizuj"
-                android:textColor="@android:color/white" />
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/userImage"
-            android:layout_marginTop="24dp"
-            android:text="@string/main_page_tv_email"
-            android:textColor="@color/light_black"
-            android:textSize="@dimen/tv_profile_page_text_size" />
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_below="@id/usersection"
+                                        android:layout_marginTop="16dp"
+                                        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/userEmailET"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewEmail"
-            android:layout_marginTop="1dp"
-            android:hint="@string/main_page_ed_email"
-            android:textColor="@color/light_black"
-            android:textSize="15sp" />
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Twoje Zgłoszenia"
+                                            android:textAlignment="center"
+                                            android:textSize="18sp"
+                                            android:textStyle="italic|bold" />
 
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/recycleruserRaport"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginBottom="-9dp"
+                                            android:background="@android:color/transparent"
+                                            tools:listitem="@layout/list_row" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/userEmailET"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
+                                    </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Twoje Kontrole"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:textStyle="italic|bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycleruserRaport"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="-9dp"
-                android:background="@android:color/transparent"
-                tools:listitem="@layout/list_row" />
-
-        </LinearLayout>
     </RelativeLayout>
 
 </FrameLayout>

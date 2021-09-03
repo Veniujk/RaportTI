@@ -57,7 +57,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-
+    //PDF
+    implementation 'com.itextpdf:itext7-core:7.1.11'
     //Navigation UI
     def nav_version = "2.3.1"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
