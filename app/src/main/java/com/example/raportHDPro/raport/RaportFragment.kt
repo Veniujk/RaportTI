@@ -5,7 +5,6 @@ import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.navigation.fragment.findNavController
 import com.example.raportHDPro.BaseFragment
@@ -15,7 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.fragment_raport_zone1.*
+import kotlinx.android.synthetic.main.fragment_raport.*
 import java.util.*
 
 class RaportFragment : BaseFragment() {
@@ -33,7 +32,7 @@ class RaportFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_raport_zone1, container, false)
+        return inflater.inflate(R.layout.fragment_raport, container, false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -103,53 +102,75 @@ class RaportFragment : BaseFragment() {
       /*  raport.name?.let { getIndex(zone1_name_spinner, it) }?.let {
         zone1_name_spinner.setSelection(it)
         }*/
-        raport.lr1?.let { zone1_report_lp1.isChecked = it }
-        raport.lr2?.let { zone1_report_lp2.isChecked = it }
-        raport.lr3?.let { zone1_report_lp3.isChecked = it }
-        raport.lr4?.let { zone1_report_lp4.isChecked = it }
-        raport.lr5?.let { zone1_report_lp5.isChecked = it }
-        raport.lr6?.let { zone1_report_lp6.isChecked = it }
-        raport.lr7?.let { zone1_report_lp7.isChecked = it }
-        raport.lr8?.let { zone1_report_lp8.isChecked = it }
-        raport.lr9?.let { zone1_report_lp9.isChecked = it }
-        raport.lr10?.let { zone1_report_lp10.isChecked = it }
-        raport.lr11?.let { zone1_report_lp11.isChecked = it }
-        raport.lr12?.let { zone1_report_lp12.isChecked = it }
-        raport.lr13?.let { zone1_report_lp13.isChecked = it }
-        raport.lr14?.let { zone1_report_lp14.isChecked = it }
-        raport.lr15?.let { zone1_report_lp15.isChecked = it }
-        raport.lr16?.let { zone1_report_lp16.isChecked = it }
-
-
-
-     /*   raport.lr18?.let { zone1_report_lp18.isChecked = it }
-        raport.lr21?.let { zone1_report_lp21.isChecked = it }
-        raport.lr22?.let { zone1_report_lp22.isChecked = it }
-        raport.lr23?.let { zone1_report_lp23.isChecked = it }*/
+        raport.TISO001?.let { TISO001.isChecked = it }
+        raport.TISO002?.let { TISO002.isChecked = it }
+        raport.TISO003?.let { TISO003.isChecked = it }
+        raport.TISO004?.let { TISO004.isChecked = it }
+        raport.TISO005?.let { TISO005.isChecked = it }
+        raport.TISO006?.let { TISO006.isChecked = it }
+        raport.TISO007?.let { TISO007.isChecked = it }
+        raport.TISO008?.let { TISO008.isChecked = it }
+        raport.TISO009?.let { TISO009.isChecked = it }
+        raport.TISO010?.let { TISO010.isChecked = it }
+        raport.TISO011?.let { TISO011.isChecked = it }
+        raport.TISO012?.let { TISO012.isChecked = it }
+        raport.TISO013?.let { TISO013.isChecked = it }
+        raport.TISO014?.let { TISO014.isChecked = it }
+        raport.TISO015?.let { TISO015.isChecked = it }
+        raport.TISO016?.let { TISO016.isChecked = it }
+        TISO001_edittext.setText(raport.TISO001_uwagi)
+        TISO002_edittext.setText(raport.TISO002_uwagi)
+        TISO003_edittext.setText(raport.TISO003_uwagi)
+        TISO004_edittext.setText(raport.TISO004_uwagi)
+        TISO005_edittext.setText(raport.TISO005_uwagi)
+        TISO006_edittext.setText(raport.TISO006_uwagi)
+        TISO007_edittext.setText(raport.TISO007_uwagi)
+        TISO008_edittext.setText(raport.TISO008_uwagi)
+        TISO009_edittext.setText(raport.TISO009_uwagi)
+        TISO010_edittext.setText(raport.TISO010_uwagi)
+        TISO011_edittext.setText(raport.TISO011_uwagi)
+        TISO012_edittext.setText(raport.TISO012_uwagi)
+        TISO013_edittext.setText(raport.TISO013_uwagi)
+        TISO014_edittext.setText(raport.TISO014_uwagi)
+        TISO015_edittext.setText(raport.TISO015_uwagi)
+        TISO016_edittext.setText(raport.TISO016_uwagi)
 
         if (raport.uid != auth.currentUser?.uid) {
           //  zone1_name_spinner.isEnabled = false
-            zone1_report_lp1.isEnabled = false
-            zone1_report_lp2.isEnabled = false
-            zone1_report_lp3.isEnabled = false
-            zone1_report_lp4.isEnabled = false
-            zone1_report_lp5.isEnabled = false
-            zone1_report_lp6.isEnabled = false
-            zone1_report_lp7.isEnabled = false
-            zone1_report_lp8.isEnabled = false
-            zone1_report_lp9.isEnabled = false
-            zone1_report_lp10.isEnabled = false
-            zone1_report_lp11.isEnabled = false
-            zone1_report_lp12.isEnabled = false
-            zone1_report_lp13.isEnabled = false
-            zone1_report_lp14.isEnabled = false
-            zone1_report_lp15.isEnabled = false
-            zone1_report_lp16.isEnabled = false
-          //  zone1_report_lp17.isEnabled = false
-           /* zone1_report_lp18.isEnabled = false
-            zone1_report_lp21.isEnabled = false
-            zone1_report_lp22.isEnabled = false
-            zone1_report_lp23.isEnabled = false*/
+            TISO001.isEnabled = false
+            TISO002.isEnabled = false
+            TISO003.isEnabled = false
+            TISO004.isEnabled = false
+            TISO005.isEnabled = false
+            TISO006.isEnabled = false
+            TISO007.isEnabled = false
+            TISO008.isEnabled = false
+            TISO009.isEnabled = false
+            TISO010.isEnabled = false
+            TISO011.isEnabled = false
+            TISO012.isEnabled = false
+            TISO013.isEnabled = false
+            TISO014.isEnabled = false
+            TISO015.isEnabled = false
+            TISO016.isEnabled = false
+            TISO001_edittext.isEnabled = false
+            TISO002_edittext.isEnabled = false
+            TISO003_edittext.isEnabled = false
+            TISO004_edittext.isEnabled = false
+            TISO005_edittext.isEnabled = false
+            TISO006_edittext.isEnabled = false
+            TISO007_edittext.isEnabled = false
+            TISO008_edittext.isEnabled = false
+            TISO009_edittext.isEnabled = false
+            TISO010_edittext.isEnabled = false
+            TISO011_edittext.isEnabled = false
+            TISO012_edittext.isEnabled = false
+            TISO013_edittext.isEnabled = false
+            TISO014_edittext.isEnabled = false
+            TISO015_edittext.isEnabled = false
+            TISO016_edittext.isEnabled = false
+
+
         }
     }
 
@@ -160,36 +181,47 @@ class RaportFragment : BaseFragment() {
             raport = (argumentRaport as Raport)
         }
         val data = hashMapOf<Any, Any>(
-            "lr1" to zone1_report_lp1.isChecked,
-            "lr2" to zone1_report_lp2.isChecked,
-            "lr3" to zone1_report_lp3.isChecked,
-            "lr4" to zone1_report_lp4.isChecked,
-            "lr5" to zone1_report_lp5.isChecked,
-            "lr6" to zone1_report_lp6.isChecked,
-            "lr7" to zone1_report_lp7.isChecked,
-            "lr8" to zone1_report_lp8.isChecked,
-            "lr9" to zone1_report_lp9.isChecked,
-            "lr10" to zone1_report_lp10.isChecked,
-            "lr11" to zone1_report_lp11.isChecked,
-            "lr12" to zone1_report_lp12.isChecked,
-            "lr13" to zone1_report_lp13.isChecked,
-            "lr14" to zone1_report_lp14.isChecked,
-            "lr15" to zone1_report_lp15.isChecked,
-            "lr16" to zone1_report_lp16.isChecked,
-          //  "lr17" to zone1_report_lp17.isChecked,
-           /* "lr18" to zone1_report_lp18.isChecked,
-            "lr21" to zone1_report_lp21.isChecked, //okresowo dlatego start od 20
-            "lr22" to zone1_report_lp22.isChecked,//okresowo dlatego start od 20
-            "lr23" to zone1_report_lp23.isChecked,//okresowo dlatego start od 20*/
-
+            "TISO001" to TISO001.isChecked,
+            "TISO002" to TISO002.isChecked,
+            "TISO003" to TISO003.isChecked,
+            "TISO004" to TISO004.isChecked,
+            "TISO005" to TISO005.isChecked,
+            "TISO006" to TISO006.isChecked,
+            "TISO007" to TISO007.isChecked,
+            "TISO008" to TISO008.isChecked,
+            "TISO009" to TISO009.isChecked,
+            "TISO010" to TISO010.isChecked,
+            "TISO011" to TISO011.isChecked,
+            "TISO012" to TISO012.isChecked,
+            "TISO013" to TISO013.isChecked,
+            "TISO014" to TISO014.isChecked,
+            "TISO015" to TISO015.isChecked,
+            "TISO016" to TISO016.isChecked,
         )
+
         data.put("control", control(data).toString())
         auth.currentUser?.uid?.let { it1 -> data.put("uid", it1) }
         auth.currentUser?.email?.let { it1 -> data.put("uemail", it1) }
       //  data.put("name", zone1_name_spinner.selectedItem)
         data.put("date", Timestamp(Date()))
         data.put("cid", "Top-Info")
-        data.put("uwagi",text_input_uwagi.text.toString())
+        data.put("TISO001_uwagi",TISO001_edittext.text.toString())
+        data.put("TISO002_uwagi",TISO002_edittext.text.toString())
+        data.put("TISO003_uwagi",TISO003_edittext.text.toString())
+        data.put("TISO004_uwagi",TISO004_edittext.text.toString())
+        data.put("TISO005_uwagi",TISO005_edittext.text.toString())
+        data.put("TISO006_uwagi",TISO006_edittext.text.toString())
+        data.put("TISO007_uwagi",TISO007_edittext.text.toString())
+        data.put("TISO008_uwagi",TISO008_edittext.text.toString())
+        data.put("TISO009_uwagi",TISO009_edittext.text.toString())
+        data.put("TISO010_uwagi",TISO010_edittext.text.toString())
+        data.put("TISO011_uwagi",TISO011_edittext.text.toString())
+        data.put("TISO012_uwagi",TISO012_edittext.text.toString())
+        data.put("TISO013_uwagi",TISO013_edittext.text.toString())
+        data.put("TISO014_uwagi",TISO014_edittext.text.toString())
+        data.put("TISO015_uwagi",TISO015_edittext.text.toString())
+        data.put("TISO016_uwagi",TISO016_edittext.text.toString())
+
 
         if (raport == null) {
             cloud.collection("raports")
