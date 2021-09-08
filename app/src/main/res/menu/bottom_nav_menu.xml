@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/raportFragment"
-        android:icon="@android:drawable/ic_input_add"
+        android:icon="@drawable/helpdesk"
         android:title="Raport" />
     <item
         android:id="@+id/homeFragment"
@@ -13,5 +13,5 @@
     <item
         android:id="@+id/profileFragment"
         android:title="Profil"
-        android:icon="@drawable/ic_profile"/>
+        android:icon="@drawable/profile"/>
 </menu>

@@ -21,6 +21,7 @@ class RaportFragment : BaseFragment() {
     private val cloud = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
     private val DEBUG = "REG_DEBUG"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
         super.onCreate(savedInstanceState)
@@ -221,6 +222,7 @@ class RaportFragment : BaseFragment() {
         data.put("TISO014_uwagi",TISO014_edittext.text.toString())
         data.put("TISO015_uwagi",TISO015_edittext.text.toString())
         data.put("TISO016_uwagi",TISO016_edittext.text.toString())
+
 
 
         if (raport == null) {
